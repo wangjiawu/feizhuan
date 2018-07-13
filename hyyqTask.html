@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>发布任务</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/hyyqTask.css">
+    <script type="text/javascript" src="./js/flexible.js"></script>
+</head>
+<body>
+    <div id="app">
+    <header>
+        <a href="javascript:history.go(-1);" class="back"></a>
+        <span>发布任务</span>
+    </header>
+    <div class="content">
+    <div class="taskName">
+        <label>任务名称</label>
+        <input type="text" v-model='name' placeholder="在这里输入任务名称" onfocus="this.placeholder=''"/>
+        <span>*</span>
+    </div>
+    <div class="description">
+        <label>任务描述</label>
+        <input type="textarea" v-model='content' placeholder="任务内容说明80字符以内" onfocus="this.placeholder=''"/>
+        <span class="import">*</span>
+    </div>
+    <div class="price">
+        <label>佣金价格</label>
+        <input type="text" v-model = 'money' placeholder="￥0.00" onfocus="this.placeholder=''"/>元/个
+        <span>*</span>
+    </div>
+    <div class="tasknum">
+        <label>任务数量</label>
+        <input type="text" v-model='number'placeholder="xxx" onfocus="this.placeholder=''"/>个
+        <span>*</span>
+    </div>
+    <div class="yaoqingma">
+        <label>邀请码</label>
+        <input type="text" v-model='number'placeholder="邀请码" onfocus="this.placeholder=''"/>
+        <span>*</span>
+    </div>
+    <div class="images">
+        <label>图&nbsp;&nbsp;&nbsp;片</label>
+        <img src="./images/btn_tupian.png" alt="">
+    </div>
+    <div class="tally">
+        <label>标&nbsp;&nbsp;&nbsp;签</label>
+    </div>
+   <ul>
+       <li class="register">注册</li>
+       <li class="dowmload">下载</li>
+       <li class="invitation">邀请码</li>
+       <li class="wechat">微信</li>
+   </ul>
+   <ul>
+        <li class="register">高额</li>
+        <li class="dowmload">关注</li>
+        <li class="invitation">投票</li>
+        <li class="wechat">分享</li>
+    </ul>
+    <div class="deadline">
+        <label>任务有效期</label>
+        <input type="date" class="fr">
+    </div>
+    <div class="remarks">
+        <label>备注</label>
+        <input type="text">
+    </div>
+    <div class="user">
+        <input type="radio">
+        <a href="#">用户使用协议</a>
+    </div>
+    </div>
+    <footer @click='addTask()'>确认任务</footer>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="./js/jquery-1.6.4.min.js"></script>
+<script src="./script/api.js"></script> 
+<script src="./js/vue.js"></script>

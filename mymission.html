@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我发布的任务</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/mymission.css">
+    <link rel="stylesheet" href="./css/mescroll.min.css">
+    <script type="text/javascript" src="./js/flexible.js"></script>
+</head>
+
+
+<body>
+    <header>
+        <a href="javascript:history.go(-1);" class="back"></a>
+        <span>我发布的任务</span>
+    </header>
+    <div class="content mescroll" id="mescroll">
+        <ul id="newsList" class="news-list">
+
+        </ul>
+        </nav>
+        <script src="./js/jquery-1.10.2.min.js"></script>
+        <script src="./js/md5.js"></script>
+        <script src="./js/base.js"></script>
+        <script src="./script/api.js"></script>
+        <script src="./artTemplate/template.js"></script>
+        <script src="./js/mescroll.min.js"></script>
+        <script type="text/template" id="myTaskTpl">
+        {{each resultData.task as item i}}
+        <li class="list" id="{{item.id}}">
+                <div class="date">
+                    <p>{{item.addTime}}</p>
+                </div>
+                <div class="describe">
+                    <p>{{item.name}}</p>
+                    <p>任务内容：{{item.content}}</p>
+                    <p>
+                        <span>单价：￥{{item.money/100}} </span>
+                        <span>数量：{{item.number}}</span>
+                    </p>
+                    <!-- <p>任务类型：{{item.name}}</p> -->
+                </div>
+                <div class="anniu fr anniu{{i}}">
+                    
+                    <button style="background:{{item.label[0]?item.label[0].labelColor:'red'}}"></button>
+
+                </div>
+            </li>
+        {{/each}}
+    </script>
+        <script>
+
+            // 进行中 红 accomplish 已完成  unfinished  未完成     unpublished   未发布
+            $(function () {
+
+                var mescroll = new MeScroll("mescroll", {
+                    down: {
+                        noMoreSize: 5,
+                        auto: false,
+                        callback: downCallback,
+                        empty: {
+                            // icon: "./img/wallet_img_no@3x.png", 
+                            tip: "暂无相关数据~ 再逛逛~",
+                        }
+                    },
+                    up: {
+                        noMoreSize: 5,
+                        auto: true,
+                        isBounce: false,
+                        callback: upCallback,
+                        empty: {
+                            // icon: "./img/wallet_img_no@3x.png", 
+                            tip: "暂无相关数据~ 再逛逛~",
+                        }
+                    }
+                });
+
+
+                function downCallback() {
+                    getListDataFromNet(0, 1, function (data) {
+                        mescroll.endSuccess();
+                        setListData(data);
+                    }, function () {
+                        mescroll.endErr();
+                    });
+                }
+
+                function upCallback(page) {
+
+                    getListDataFromNet(page.num, page.size, function (curPageData) {
+
+                        if (curPageData.resultCode == 10000) {
+                            mescroll.endByPage(curPageData.resultData.task.length, curPageData.resultData.count);
+                            setListData(curPageData);
+                        } else {
+                            mescroll.endByPage(0, 0);
+                            mescrollArr[dataIndex].showEmpty();
+                        }
+                    }, function () {
+                        mescroll.endErr();
+                    });
+                }
+
+                function setListData(curPageData) {
+
+                    $("#newsList").html("");
+                    var html = template("myTaskTpl", curPageData);
+                    $("#newsList").append(html);
+                    // console.log(curPageData)
+                    if (curPageData.resultCode == 10000) {
+
+                        curPageData.resultData.task.forEach(function (item, i) {
+                            switch (item.state) {
+                                case 0:
+                                    $(".anniu" + i + " button").html("审核中")
+                                    break;
+                                case 1:
+                                    $(".anniu" + i + " button").html("审核通过，上线")
+                                    break;
+                                case 2:
+                                    $(".anniu" + i + " button").html("审核失败")
+                                    break;
+                                case 3:
+                                    $(".anniu" + i + " button").html("审核通过，下线")
+                                    break;
+                            }
+                        })
+                    }
+
+                }
+
+
+                var downIndex = 0;
+                function getListDataFromNet(pageNum, pageSize, successCallback, errorCallback) {
+
+                    $.ajax({
+                        type: "post",
+                        url: API + "/task/getMyTask.wckj",
+                        dataType: "json",
+                        data: {
+                            "uid": localStorage.uid,
+                            "limit": pageSize,
+                            "page": pageNum,
+                            "t": base().t,
+                            "uuid": base().uuid,
+                            "v": base().v,
+                            "h": base().h,
+                            "c": base().c,
+                        },
+                        success(data) {
+                            console.log(data)
+                            successCallback(data)
+                        },
+                        error: errorCallback
+                    })
+                }
+
+            })
+
+        </script>
+</body>
+
+</html>

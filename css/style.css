@@ -1,0 +1,309 @@
+.banner,.banner>img{
+    width: 100%;
+    /* 30 26 50 46 */
+    margin-top:0.57333rem;
+}
+.hide{
+    display: none
+}
+.time{
+    position: relative;
+    width: 100%;
+    height: 1.1733rem;
+    padding: 0.2667rem 0.6933rem 0 0.5333rem;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ccc;
+    font-size: 0.3467rem;
+}
+.time .nextday{
+    position: absolute;
+    top: 0;
+    height: 0.2667rem;
+    right: 1.0rem;
+}
+.time .nextday img{
+    height: 0.2667rem;
+}
+.time ul,.time li{
+    height: 100%;
+}
+.time p{
+    text-align: center
+}
+.time p:last-child{
+    font-size: 0.32rem;
+}
+.time ul{
+    display: flex;
+    justify-content:space-between   
+}
+.time1,.time2,.time3{
+    width: 1.2rem;
+}
+.time .begin{
+    color:#333;
+}
+.time .now{
+    color:#7d33d0;
+    border-bottom: 0.0533rem solid #7d33d0;
+}
+.time .fli{
+    color:#999;
+
+}
+.main{
+    width: 100%;
+    box-sizing: border-box;
+    height: 2.5333rem;
+    padding:0.4rem 0 0.2667rem 0.6133rem;
+    position: relative;
+}
+.main>div{
+    float: left;
+    display: inline-block;
+}
+.main .main_l>img{
+    /* display: inline-block; */
+    width: 1.8667rem;
+    height: 1.8667rem;
+    margin-right: 0.4rem
+}
+.main .main_m{
+    width: 4.4rem;
+    font-size:0.2667rem;
+    float:left;
+}
+ .main .main_m .tittle1{
+     font-size: 0.2667rem;
+     padding-top: 0.1333rem;
+     color: #000000;
+     font-size: 0.3467rem;
+    line-height: 0.32rem;
+     
+ }
+.main .main_m .tittle2{
+    width: 4.1333rem;
+     padding-top: 0.1333rem;            
+    overflow: hidden;/*内容超出后隐藏*/
+    text-overflow: ellipsis;/* 超出内容显示为省略号*/
+    white-space: nowrap;/*文本不进行换行*/
+     font-size: 0.2133rem;
+     color:#999;          
+     font-size: 0.32rem;
+    line-height: 0.32rem;  
+}
+.main .main_m .fbtime{
+     font-size: 0.2133rem;
+    padding-top: 0.4rem;
+    color:#999;
+    font-size: 0.32rem;
+    line-height: 0.32rem;
+    /* padding-bottom: 0.2133rem; */
+}
+.main .main_m .jdt{
+    position: relative;
+}
+.main .main_m .jdt>div{
+    margin-top: 0.2133rem;
+    float:left;
+    font-size: 0.2133rem;
+    color:#999;
+    height: 0.0267rem;
+    background-color: #999;
+    padding-right: 0.1333rem;
+    width: 2.9rem;
+    margin-right: 0.1333rem;
+}
+.main .main_m .jdt>span{
+    position: absolute;
+    right:0;
+    top:0px;
+     font-size: 0.24rem;            
+}
+.main .main_m .jdt>div span{
+    float:left;
+     display: inline-block;
+     height: 0.0267rem;
+     width: 60%;
+     background-color: #7d33d0;
+ }
+ .main .main_r{
+     float: right;
+    font-size: 0.3733rem;
+    text-align: center;
+    padding-top: 0.2267rem;
+ }
+ .main .main_r .money{
+     margin-right: 0.7467rem;
+     color: #7d33d0;
+ }
+ .main .main_r .go{
+     margin-top:0.48rem;              
+     background-color: #7d33d0;
+    display: inline-block;
+    padding:0.16rem 0.2933rem;             
+     margin-right: 0.5333rem;
+     color:#fff;
+     border-radius: 0.2rem;
+ }
+ .main .main_r .go.flig{          
+    background-color: #fe7b79;
+ }
+ .main .main_r .go.end{          
+    background-color: #ccc;
+ }
+ .mask{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,80%);
+    z-index: 10;
+}
+.mask .center{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translateX(-50%) translateY(-50%);
+    color:#fff;
+    text-align: center;
+}
+.center .money{
+    font-size: 0.6133rem;
+    margin-bottom: 0.8533rem;
+    
+}
+.center .msgs{
+    line-height: 0.6933rem;
+    font-size: 0.4rem;
+    width: 6rem;
+    margin-bottom: 2rem;
+}
+.center .btn{
+
+}
+.center .btn img{
+    width: 2.7rem;
+}
+.w{
+    width: 100%;
+    padding:0.56rem 0.4rem 0 0.4rem;
+    box-sizing: border-box;
+}
+.text30{
+    font-size: 0.4rem;
+}
+.text26{
+    font-size: 0.3467rem;
+    width: 90%;
+    height: 1rem;
+}
+.moneyList{
+    padding-top: 0.56rem;
+    margin-bottom: 0.9333rem;
+}
+.moneyList li{
+    /* float:left; */
+    margin-right: 0.4rem;
+    color:#4090e9;
+    width: 1.8933rem;
+    height: 1.2rem;
+    float:left;
+    display: inline-block;
+    border: 1px solid #4090e9;
+    border-radius: 0.1333rem;
+    font-size: 0.2667rem;
+    text-align: center;
+    line-height: 1rem;
+    padding-top: 0.1rem;
+    box-sizing: border-box;
+}
+.moneyList li:last-child{
+    padding:0;
+}
+.moneyList li span {
+    /* width: 1.8933rem;
+    height: 1.2rem;
+    float:left;
+    display: inline-block;
+    border: 1px solid #4090e9;
+    border-radius: 0.1333rem;
+    font-size: 0.2667rem;
+    text-align: center;
+    line-height: 0.4667rem;
+    padding-top: 0.1rem;
+    box-sizing: border-box; */
+    
+}
+.moneyList li.active{
+    background: #4090e9;
+    color:#fff;
+    border-radius: 0.1333rem;
+}
+p.text26{
+    color:#cbcbcb;
+    padding-bottom: 0.28rem;
+    border-bottom: 1px solid #cbcbcb;
+    margin-bottom: 0.5333rem;
+}
+.pay{
+    line-height: 0.8267rem;
+    padding-top: 0.18rem;
+    padding-bottom: 0.15rem;
+    border-bottom:1px solid #ccc;
+}
+.pay img,.pay2 img{
+    vertical-align: middle;
+    padding-right: 0.2rem;
+    width: 0.6933rem;
+}
+.pay2{
+    line-height: 0.8267rem;
+    padding-top: 0.12rem;
+    padding-bottom: 0.7333rem;
+}
+.chongzhi{
+    text-align: center;
+    padding-bottom: 1.9467rem
+}
+.chongzhi>span{
+    display: inline-block;
+    width: 3.3333rem;
+    height: 1.0667rem;
+    background-color: #4090e9;
+    border-radius: 0.16rem;
+    color:#fff;
+    line-height: 1.0667rem;
+    text-align: center;
+}
+.payres{
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+.payres>span{
+    display: inline-block;
+    width: 8.2667rem;
+    height: 3.5467rem;
+    border-radius: 0.2rem;
+    text-align: center;
+    line-height: 3.5467rem;
+    box-shadow: 0 0.0267rem 0.2rem #cdcdcd
+}
+.wxpay {
+    text-align:center;
+}
+.zfbpay {
+    text-align: center;
+}
+header{
+    height: 1.12rem;
+    line-height: 1.12rem;
+    font-size: 0.453333rem;
+    text-align: center;
+    color: #fff;
+    position: fixed;
+    left:0px;
+    top:0px;
+    width:100%;
+    background: linear-gradient(to right,#8335d4,#1d148b);
+    z-index: 100; 
+  }

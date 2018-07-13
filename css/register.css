@@ -1,0 +1,111 @@
+body {
+    background:url('../images/pic_bg@2x.png');
+}
+header {
+    color: #fff;
+    font-size: 0.533333rem;
+    text-align: center;
+    margin-top:1.92rem;
+    opacity: 0.9;
+}
+header a {
+  float: left;
+  padding-left: 0.533333rem;
+}
+header img {
+    height: 0.6rem;
+    width: 0.353333rem;
+
+}
+.inputBox {
+    margin-top: 2rem;
+    margin-left: 1.013333rem;
+    margin-right: 1.013333rem;
+    font-size: 0.4rem;
+    color: #fff;
+    opacity: 0.7;
+    width: 80%;
+}
+.number {
+    border-bottom: 0.013333rem solid #ccc;
+    padding-bottom: 0.4rem;
+    /* width: 8rem; */
+}
+.number input {
+    padding-left: 0.133333rem;
+    font-size: 0.346667rem;
+    color: #fff;
+}
+.iphone {
+    padding-left: 0.986667rem;
+}
+.code {
+    padding-top: 0.426667rem;
+    border-bottom: 0.013333rem solid #ccc;
+    padding-bottom: 0.4rem;
+    /* width: 8rem; */
+  }
+.code input {
+    color: #fff;
+    /* font-size: 0.346667rem; */
+    padding-left: 0.986667rem;
+    opacity: 0.2;
+  }
+.pwd {
+  padding-top: 0.426667rem;
+  border-bottom: 0.013333rem solid #ccc;
+  padding-bottom: 0.4rem;
+  /* width: 8rem; */
+}
+.pwd input {
+    font-size: 0.346667rem;
+    padding-left: 0.986667rem;
+}
+input:input-placeholder {
+    color: #fff;
+}
+/* .code img {
+    float: right;
+    height: 0.586667rem;
+    width: 0.933333rem;
+} */
+.inputBox .register {
+    padding-top:0.266667rem;
+}
+.register a {
+    color: #fff;
+    font-size: 0.346667rem;
+    opacity: 0.3;
+    text-decoration:underline;
+}
+.forget {
+    padding-left: 5.453333rem;
+}
+.finish {
+    text-align: center;
+    padding-top: 2.026667rem;
+}
+.finish button {
+    cursor: pointer;
+}
+.finish img{
+    height: 1.173333rem;
+    width: 4.373333rem;
+}
+.quickLogin {
+    padding-top: 1.733333rem;
+    text-align: center;
+    color: #fff;
+    opacity: 0.7;
+}
+.quickLogin p {
+    color: #fff;
+    opacity: 0.2;
+    font-size: 0.4rem;
+    padding-bottom: 0.266667rem;
+}
+.quickLogin a {
+    height: 0.8rem;
+    width: 0.96rem;
+    text-align: center;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>大乐透购买者</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/cpBuyer.css">
+    <script type="text/javascript" src="./js/flexible.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <a href="javascript:history.go(-1);" class="back"></a>
+            <span>大乐透</span>
+        </header>
+        <div class="content">
+            <p class="buyer">请选择购买人信息</p>
+            <div class="personal">
+                <label>
+                    <input type="radio" name="personals" >
+                </label> 
+                <div class="bianji">
+                    <a href="./daletou.html"></a>
+                </div>
+                <p class="name">{{myIndex.name}}</p> 
+                <div class="cardId">
+                    <span class="idCard ">{{myIndex.idCard}}</span>
+                    <span class="phone">{{myIndex.phone}}</span>
+                    <!-- <img src="./images/btn_xiugai_shense@2x.png" alt=""> -->
+                </div>
+
+                <div class="buy">
+                    <div class="purchase ">
+                        <p class="gmsl">购买数量</p>
+                        <span class="sub">-</span>
+                        <span class="nub" style="margin: 0 5px">1</span>
+                        <span class="add">+</span>
+                    </div>
+                    <div class="order" @click="setOrder();">
+                        <span>￥<span class="money">3</span>.00/确定下单</span>
+                    </div>
+            </div>
+        </div>
+   </div>
+   </div>
+   
+</body>
+<script src="./js/jquery-1.6.4.min.js"></script>
+<script type="text/javascript" src="./js/vue.js"></script>
+<script type="text/javascript" src="./script/api.js"></script>
+<!-- <script type="text/javascript" src="./script/caipiao.js"></script> -->
+<script type="text/javascript" src="./script/cpBuyer.js"></script>
+<script type="text/javascript">
+    $('.sub').click(function(){
+   var num = $('.nub').text();
+   if(num == 1) alert('至少购买一注')
+   else num--
+   $('.nub').text(num)
+   $('.money').text(num*3)
+ })
+ $('.add').click(function(){
+   var num = $('.nub').text()
+   if(num < 5) num++
+   else alert('最多买五注')
+   $('.nub').text(num)
+   $('.money').text(num*3)
+ })
+ </script>
+</html> 

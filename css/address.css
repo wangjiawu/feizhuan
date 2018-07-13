@@ -1,0 +1,116 @@
+/*设置背景色*/
+body{
+	background-color: #eee;
+
+}
+/*头像区域*/
+.selfinfo{
+	width: 10.0rem;
+	height: 5.866667rem;
+	padding:0 0.333333rem;
+	padding-top: 0.533333rem;
+	box-sizing: border-box;
+	background: linear-gradient(to right, #8335d4, #1c148b);
+}
+.selfinfo h3{
+	font-size: 0.6rem;
+	color: #fff;
+	height: 1.173333rem;
+	line-height: 1.173333rem;
+	text-align: center;
+	position: relative;
+}
+.selfinfo .photo{
+	width: 2.16rem;
+	height: 2.16rem;
+	margin-top:0.266667rem;
+	margin-left: 0.266667rem;
+	margin-right: 0.4rem;
+	float: left;
+}
+.selfinfo .name{
+	float: left;
+	display: inline-block;
+	margin-top: 0.626667rem;
+	font-size: 0.4rem;
+	color: #fff;
+	padding-right: 0.666667rem;
+	margin-right: 30%;
+}
+.selfinfo .name a{
+	display: inline-block;
+	width: 0.4rem;
+	height:0.4rem;
+	margin-left: 0.4rem;
+	background: url(../images/btn_xiugai@2x.png) no-repeat right center;
+	background-size: 0.4rem 0.4rem
+}
+
+.selfinfo .change{
+	display: inline-block;
+	float: left;
+	width: 1.466667rem;
+	height:0.533333rem;
+	border-radius: 0.133333rem;
+	margin-top: 0.266667rem;
+}
+.selfinfo .change img{
+	width: 100%;
+	height:100%;
+}
+
+
+
+
+/*收货地址信息*/
+.address{
+	width: 10rem;
+	padding:0 0.333333rem;
+	box-sizing: border-box;
+}
+.address .add-info{
+	padding-top:0.533333rem;
+	padding-bottom: 0.933333rem;
+}
+.address .add-info li{
+	height: 1.173333rem;
+	line-height: 1.173333rem;
+	background-color: #fff;
+	margin-bottom: 0.266667rem;
+	border-radius: 0.133333rem;
+	color: #333;
+	font-size: 0.346667rem;
+	padding-left: 0.266667rem;
+	padding-right: 0.4rem;
+	position: relative;
+}
+.add-info input{
+	width: 100%;
+	height:100%;
+	line-height: 1.173333rem;
+	position: relative;
+}
+
+.address .add-info .addr{
+	background-color: #eee;
+	margin-bottom: 0;
+}
+
+.edit{
+	width: 0.4rem;
+	height:0.4rem;
+	display: inline-block;
+	position: absolute;
+	top: 0.4rem;
+	right: 0.4rem;
+	background: #eee url(../images/btn_xiugai@2x.png) no-repeat right center;
+	background-size: 0.4rem 0.4rem;
+	z-index: 10;
+}
+
+.confirm{
+	width: 9.306667rem;
+	height: 1.173333rem;
+	background: url(../images/btn_queren@2x.png) no-repeat center;
+	border-radius: 0.133333rem;
+}

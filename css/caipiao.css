@@ -1,0 +1,184 @@
+body{
+    position: relative;
+}
+.banner{
+   background: url('../images/banner@2x.png') no-repeat;
+   background-size: 100% 100%;
+   height: 7.8rem;
+   width: 100%;
+}
+header{
+    height: 1.12rem;
+    line-height: 1.12rem;
+    font-size: 0.453333rem;
+    text-align: center;
+    color: #fff;
+    position: fixed;
+    left:0px;
+    top:0px;
+    width:100%;
+    background: linear-gradient(to right,#8335d4,#1d148b);
+    z-index: 100; 
+  }
+  .list {
+      width: 100%;
+      margin-top:0.5rem;
+      text-align: center;
+  }
+  .list a {
+      display: inline;
+      padding:0.2rem;
+     
+  }
+  .list img {
+      height: 4.2rem;
+      width:4.2rem;
+  }
+  .line {
+      width: 100%;
+       margin-top: 0.5rem;
+      border-bottom: 0.1rem rgb(224, 221, 221) solid;
+  }
+  /*综合样式*/
+.light-gray{
+  color: #999;
+  padding-bottom: 0.1rem;
+  font-size: 0.4rem;
+}
+a.light-gray{
+  color: #999;
+  font-size: 0.4rem;
+}
+/*弹性盒*/
+.dib{
+  display: inline-block;
+}
+.flexbox{
+  display: flex;
+}
+.fb1{
+  flex-grow: 1;
+  width: 1px;
+}	
+.fb_acenter{
+  align-content: center;
+  /* align-items: center; */
+}
+
+.award {
+    padding:0.2rem;
+    margin-bottom: 1.7333333rem;
+}
+.award-title-box{
+	height: 0.6rem;
+	line-height: 0.6rem;
+}
+.award-title-box a{
+	line-height: 0.5rem;
+}
+.award-content-box {
+  margin-top: 0.6rem;
+}
+.award-content-box p{
+	height: 0.4rem;
+	line-height: 0.4rem;
+}
+.award-content-img{
+	width: 0.8rem;
+	height:0.8rem;
+	border-radius: 0.1rem;
+	margin-right: 0.5rem;
+  /* background:url('../images/icon_shuangseqiu@2x.png') no-repeat; */
+  
+  background:url('../images/icon_daletou@2x.png') no-repeat;
+  background-size: 100% 100%;
+	margin-top: 0.2rem;
+}
+.award-content-img1{
+	width: 0.8rem;
+	height:0.8rem;
+	border-radius: 0.1rem;
+	margin-right: 0.5rem;
+  /* background:url('../images/icon_daletou@2x.png') no-repeat; */
+  background-size: 100% 100%;
+	
+}
+.ssq span {
+  margin-right: 0.3rem;
+  margin-top:0.1rem;
+  display: inline-block;
+	width:.8rem;
+	height: .8rem;
+	line-height: .8rem;
+	text-align: center;color: #fff;
+  border-radius: 100%;	
+}
+.ssq span:nth-child(-n+6){
+  background: #f34757;
+}
+.ssq span:last-child{
+  background: #4566eb;
+}
+.dlt span {
+  margin-right: 0.3rem;
+  margin-top:0.1rem;
+  display: inline-block;
+	width:.8rem;
+	height: .8rem;
+	line-height: .8rem;
+	text-align: center;color: #fff;
+  border-radius: 100%;	
+}
+.dlt span:nth-child(-n+5){
+  background: #f34757;
+}
+.dlt span:nth-child(n+6){
+  background: #4566eb;
+}
+  /* 底部 */
+  footer{
+    height: 1.733333rem;
+    line-height: 1.733333rem;
+    background: #fff;;
+    /* padding: 0 1.706667rem; */
+    padding-top: 0.4rem;
+    bottom: 0;
+    box-sizing: border-box;
+    position: fixed;
+    width: 100%;
+  }
+  .footer_box {
+    display: inline-block;
+    width: 24%;
+    text-align: center;
+  }
+  footer a{
+    display: inline-block;
+    height: 0.426667rem;
+    line-height: 0.426667rem;
+    text-align: center;
+    color: #ccc;
+    padding-top: 0.8rem;
+    font-size: 0.213333rem;
+  }
+  
+  footer a.task{
+    background: url("../images/btn_renwu_n.png") no-repeat;
+    background-size: contain;
+    width: 0.666667rem;
+  }
+  footer a.issue{
+    background: url("../images/btn_fabu_n.png") no-repeat;
+    background-size: contain;
+    width: 0.88rem;
+  }
+  footer a.my{
+    background: url("../images/btn_wode_n.png") no-repeat;
+    width: 0.746667rem;
+    background-size: contain;
+  }
+  footer a.caipiao{
+    background: url("../images/btn_caipiao_s@2x.png") no-repeat;
+    width: 0.746667rem;
+    background-size: contain;
+  }

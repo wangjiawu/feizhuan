@@ -1,0 +1,155 @@
+.top {
+	height: 5.866667rem;
+	width: 100%;
+	background: linear-gradient(to right,#8335d4,#1d148b);
+}
+.top .set{
+	padding-right: 0.613333rem;
+	padding-top:0.8rem;
+}
+.set img{
+	height: 0.586667rem;
+	width: 0.666667rem;
+}
+.touxiang {
+	text-align: center;
+	padding-top: 1.973333rem;
+}
+ .icon {
+	height: 2.16rem;
+	width:2.16rem;
+	border-radius: 50%;
+	border: 1px solid red;
+	display:inline-block;
+}
+.icon .tx{
+  height: 2.16rem;
+  width: 2.16rem;
+  margin-bottom: 0.24rem;
+}
+.icon span{
+   display: block;
+   font-size: 0.366667rem;
+   color: #fff;
+}
+.account {
+	width:100%;
+
+	margin-top: 0.373333rem;
+}
+.yongjin {
+	display: inline-block;
+	width: 40%;
+	text-align: right;
+}
+.account a {
+	color: #fff;
+	font-size: 0.333333rem;
+}
+.zhanghu {
+	width: 40%;
+	display: inline-block;
+}
+.line {
+	display: inline-block;
+	height: 0.506667rem;
+	width: 0.013333rem;
+	padding:0 0.266667rem;
+}
+.anniu {
+	text-align: center;
+	margin-top: 0.533333rem;
+	width: 100%;
+}
+.anniu a {
+	display: inline-block;
+}
+.withdraw {
+ width: 48%;
+ background: url('../images/btn_tixian@2x.png') no-repeat;
+ height: 1.466667rem;
+ width: 3.76rem;
+ background-size: 100% 100%;
+ margin-right: 0.533333rem;
+ margin-left: 0.50rem;
+}
+.recharge {
+	width: 48%;
+	background: url('../images/btn_chongzhi@2x.png') no-repeat;
+	height: 1.466667rem;
+	width: 3.76rem;
+	background-size: 100% 100%;
+}
+/* 发布人物列表 */
+.entrance {
+	margin-top: 0.613333rem;
+	padding-left:0.346667rem;
+}
+.entrance .list {
+	padding: 0 0.373333rem;
+	padding-bottom: 1.806667rem;
+}
+.entrance .already {
+	height: 1.173333rem;
+	line-height: 1.173333rem;
+	border-bottom: 1px solid #ccc;
+	font-size: 0.4rem;
+}
+.entrance .size {
+	color: #ff4166;
+	font-size: 0.373333rem;
+}
+/*底部导航*/
+footer{
+	height: 1.733333rem;
+	line-height: 1.733333rem;
+	background: #fff;;
+	/* padding: 0 1.706667rem; */
+	padding-top: 0.4rem;
+	bottom: 0;
+	box-sizing: border-box;
+	position: fixed;
+	width: 100%;
+  }
+  .footer_box {
+	display: inline-block;
+	width: 24%;
+	text-align: center;
+  }
+  footer a{
+	display: inline-block;
+	height: 0.426667rem;
+	line-height: 0.426667rem;
+	text-align: center;
+	color: #ccc;
+	padding-top: 0.8rem;
+	font-size: 0.213333rem;
+  }
+  
+  footer a.task{
+	background: url("../images/btn_renwu_n.png") no-repeat;
+	background-size: contain;
+	width: 0.666667rem;
+	/* margin-right: 2.08rem; */
+  }
+  footer a.issue{
+	background: url("../images/btn_fabu_n.png") no-repeat;
+	background-size: contain;
+	width: 0.88rem;
+	/* margin-right: 2rem;  */
+	}
+	footer a.caipiao{
+		background: url("../images/btn_caipiao_n@2x.png") no-repeat;
+		width: 0.746667rem;
+		background-size: contain;
+		}
+  footer a.my{
+	background: url("../images/btn_wode_n.png") no-repeat;
+	width: 0.746667rem;
+	background-size: contain;
+  }
+  footer a.my.active{
+	background: url("../images/btn_wode_s.png") no-repeat;
+	width: 0.746667rem;
+	background-size: contain;
+  }

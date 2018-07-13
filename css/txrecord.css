@@ -1,0 +1,36 @@
+.bg{
+    background-color: #eee;
+    width: 100%;
+    height: 100%;
+    padding: 0.08rem 0.3467rem 0 0.3467rem;
+    box-sizing: border-box;
+}
+.item{
+    position: relative;
+    background-color: #fff;
+    padding:0.5333rem 0.4rem 0.2667rem 0.2933rem;
+    box-sizing: border-box;
+    font-size: 0.4733rem;
+    color:#999;       
+    margin-bottom: 0.08rem;    
+}
+.item p{
+    padding-bottom: 0.2667rem;
+}
+.item p:last-child{
+    padding:0;
+}
+.item p .nav{
+    color:#000;
+    padding-right: 0.2667rem;
+}
+.item p .status{
+    font-size: 0.3467rem;
+    position: absolute;
+    right:0.4rem;
+    bottom: 0.5867rem;
+    color:#ff4141;
+}
+.item p .status.ready{
+    color:#53e672;
+}

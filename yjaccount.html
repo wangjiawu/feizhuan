@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>资金明细</title>
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"
+    />
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="css/yjaccount.css">
+    <script type="text/javascript" src="./js/flexible.js"></script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="content">
+            <ul>
+                <!-- <li>
+                    <span class="keys">
+                        发布时间
+                    </span>
+                    <span class="values">
+                        2018-04-05
+                    </span>
+                </li>
+                <li>
+                    <span class="keys">
+                        名&emsp;&emsp;称
+                    </span>
+                    <span class="values">
+                        下载APP
+                    </span>
+                </li>
+                <li>
+                    <span class="keys">
+                        佣金价格
+                    </span>
+                    <span class="values">
+                        2.00元/个
+                    </span>
+                </li>
+                <li>
+                    <span class="keys">
+                        任务数量
+                    </span>
+                    <span class="values">
+                        10个
+                    </span>
+                </li>
+                <li>
+                    <span class="keys">
+                        服&nbsp;务&nbsp;费
+                    </span>
+                    <span class="values">
+                        2元
+                    </span>
+                </li>
+                <li>
+                    <span class="keys">
+                        总&emsp;&emsp;结
+                    </span>
+                    <span class="values">
+                        22.00元
+                    </span>
+                </li>
+                <li>
+                    <span class="keys">
+                        任务状态
+                    </span>
+                    <div class="status">
+                        <ul>
+                            <li class="finish">
+                                已完成&emsp;
+                                <span class="statusValue">(10/10)</span>
+                            </li>
+                            <li class="doing">
+                                进行中&emsp;
+                                <span class="statusValue">(8/10)</span>
+                            </li>
+                            <li class="isno">
+                                未完成&emsp;
+                                <span class="statusValue">(7/10)</span>
+                            </li> -->
+
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/template" id="TaskDetailsTpl">
+        <li>
+                <span class="keys">
+                    发布时间
+                </span>
+                <span class="values">
+                   {{resultData.addTime}}
+                </span>
+            </li>
+            <li>
+                <span class="keys">
+                    名&emsp;&emsp;称
+                </span>
+                <span class="values">
+                    {{resultData.name}}
+                </span>
+            </li>
+            <li>
+                <span class="keys">
+                    佣金价格
+                </span>
+                <span class="values">
+                    {{resultData.money/100}}元/个
+                </span>
+            </li>
+            <li>
+                <span class="keys">
+                    任务数量
+                </span>
+                <span class="values">
+                    {{resultData.number}}个
+                </span>
+            </li>
+            <li>
+                <span class="keys">
+                    服&nbsp;务&nbsp;费
+                </span>
+                <span class="values">
+                    {{resultData.serviceFee/100}}元
+                </span>
+            </li>
+            <li>
+                <span class="keys">
+                    总&emsp;&emsp;结
+                </span>
+                <span class="values">
+                    {{resultData.fee/100}}元
+                </span>
+            </li>
+            <li>
+                <span class="keys">
+                    任务状态
+                </span>
+                <div class="status">
+                    <ul>
+                       <li>{{resultData.state}}</li>   
+                        <!-- <li class="finish">
+                            已完成&emsp;
+                            <span class="statusValue">(10/10)</span>
+                        </li>
+                        <li class="doing">
+                            进行中&emsp;
+                            <span class="statusValue">(8/10)</span>
+                        </li>
+                        <li class="isno">
+                            未完成&emsp;
+                            <span class="statusValue">(7/10)</span>
+                        </li> -->
+                    </ul>
+                </div>    
+            </li>
+    </script>
+</body>
+<script src="./js/jquery-1.10.2.min.js"></script>
+<script src="./script/api.js"></script>
+<script src="./artTemplate/template.js"></script>
+<script src="./script/yjaccount.js"></script>
+
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>发布成功</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/Releasesuccess.css">
+    <script type="text/javascript" src="./js/flexible.js"></script>
+</head>
+
+<body>
+    <header>
+        <a href="javascript:history.go(-1);" class="back"></a>
+        <span>发布成功</span>
+    </header>
+    <div class="succeed">
+        <img src="./images/btn_duihao@2x.png" alt="">
+        <p class="size">发布成功</p>
+        <p class="mingxi">可在
+            <a href="mymission.html">"我发布的任务"</a>中查看明细</p>
+    </div>
+    <div class="list">
+        <!-- <div class="date fl">
+            <img src="./images/btn_chuanqi@2x.png" alt="">
+        </div>
+        <div class="describe">
+         <p>Mix farm</p>
+         <p>任务内容：需要300个下载...</p>
+         <p>
+             <span>单价：2.00 </span>
+             <span>数量：478</span>
+         </p>
+         <p>任务类型：下载类</p>
+         <p>发布时间：2018-3-22</p>
+         <p>任务消耗资金：￥606.60</p>
+         <p>佣金：￥2.00*500.00=1000.00</p>
+         <p>服务费：￥1000.00*1%=10</p>
+        </div> -->
+    </div>
+    <script type="text/template" id="TaskDetailsTpl">
+        <div class="date fl">
+            <img src="{{task.icon}}" alt="">
+        </div>
+        <div class="describe">
+         <p>{{task.name}}</p>
+         <p>任务内容：{{task.content}}</p>
+         <p>
+             <span>单价：{{task.money/100}} </span>
+             <span>数量：{{task.number}}</span>
+         </p>
+         <!-- <p>任务类型：下载类</p> -->
+         <p>发布时间：{{task.addTime}}</p>
+         <p>任务消耗资金：￥<span class="order_money"></span></p>
+         <p class="money">佣金：￥<span>{{task.money/100}}</span>*<span>{{task.number}}</span>=<span class="total"></span></p>
+         <p class="server">服务费：￥<span class="server_money">1000.00</span>*1%=<span class="server_total"></span></p>
+        </div>
+    </script>
+</body>
+<script type="text/javascript" src="./js/jquery-1.6.4.min.js"></script>
+<script src="./artTemplate/template.js"></script>
+<script src="./script/api.js"></script>
+<script>
+    function GetRequest() {
+        var url = decodeURI(location.search); //获取url中"?"符后的字串
+        var theRequest = new Object();
+        if (url.indexOf("?") != -1) {
+            var str = url.substr(1);
+
+            strs = str.split("&");
+
+            for (var i = 0; i < strs.length; i++) {
+                theRequest[strs[i].split("=")[0]] = decodeURIComponent(strs[i].split("=")[1]);
+            }
+        }
+        return theRequest;
+    }
+    var a = GetRequest();
+    console.log(a)
+  
+        $.ajax({
+            type: "post",
+            url: API + "/task/getTaskDetails.wckj",
+            dataType: "json",
+            data: {
+                "uid": localStorage.uid,
+                "taskId": a.id
+            },
+            success(res) {
+                console.log(res)
+                if (res.resultCode == 10000) {
+                    res.resultData.task.addTime = new Date(res.resultData.task.addTime).getFullYear() + "-" + (new Date(res.resultData.task.addTime).getMonth() + 1) + "-" + new Date(res.resultData.task.addTime).getDate()
+                    var html = template("TaskDetailsTpl", res.resultData)
+                    $(".list").html(html);
+                    $(".total").html($(".money span").eq(0).html() * $(".money span").eq(1).html());
+                    $(".server_money").html($(".total").html());
+                    $(".server_total").html($(".server_money").html() / 100);
+                    $(".order_money").html(Number($(".total").html()) + Number($(".server_total").html()))
+                }
+            }, error(info) {
+                console.log(info)
+            }
+        })
+  
+
+
+</script>
+
+</html>

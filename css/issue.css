@@ -1,0 +1,203 @@
+body{
+    background: #8335d4;
+  }
+  header{
+    height: 1.12rem;
+    line-height: 1.12rem;
+    font-size: 0.453333rem;
+    text-align: center;
+    color: #fff;
+    position: fixed;
+    left:0px;
+    top:0px;
+    width:100%;
+    background: linear-gradient(to right,#8335d4,#1d148b);
+    z-index: 100; 
+  }
+  nav {
+    position: relative;
+    top:42px;
+  }
+  .zuixin{
+    background-color: #fff;
+    border-bottom: 2px solid #eee; 
+  }
+  .biaoti{
+    padding-top: 0.266667rem;
+    padding-bottom: 0.4rem;
+  }
+  .title{
+    margin-left: 0.346667rem;
+    font-size: 0.4rem;
+    color: #333;
+  }
+  .list {
+    margin-left: 0.586667rem;
+  }
+  .list li{
+    padding-bottom: 0.533333rem;
+  }
+  .list img{
+    width: 1.866667rem;
+    height: 1.866667rem;
+    margin-right: 0.4rem;
+  }
+  .download{
+    padding-top: 0.266667rem;
+  }
+  .download .gameName{
+    font-size: 0.373333rem;
+    color: #000;
+    height: 0.373333rem;
+    line-height: 0.373333rem;
+    margin-bottom: 0.106667rem;
+  }
+  .download .dlNumber{
+    font-size: 0.32rem;
+    color: #999;
+    width: 4.026667rem;
+    margin-bottom: 0.293333rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .download .dlTime{
+    font-size: 0.32rem;
+    color: #999;
+  }
+  .tag{
+    margin-right: 0.746667rem;
+    height: 0.533333rem;
+    line-height: 0.533333rem;
+    padding: 0 0.16rem;
+    color: #fff;
+    border: 2px solid #ffcc4f;
+    background: #ffcc4f;
+    border-radius:  0.16rem;
+    margin-top: 0.586667rem;
+  }
+  .fbimg {
+      position: fixed;
+      left: 0.373333rem;
+      bottom:1.76rem;
+      background: url('../images/btn_fabu_n@2x.png') no-repeat;
+      height:2.266667rem;
+      width:2.266667rem;
+  }
+  .taskList {
+      position: fixed;
+      width: 9.333333rem;
+      height: 5.6rem;
+      bottom: 1.73333rem;
+      left: 0.373333rem;
+      background: #000;
+      border-radius: 0.693333rem; 
+      opacity:0.78;
+      display: none;
+  }
+  /* 关闭按钮 */
+  .close {
+      background: url('../images/btn_fabu_s@2x.png') no-repeat;
+      background-size:85px 85px;
+      height:2.22rem;
+      width:2.22rem;
+      display:inline-block;
+      position: absolute;
+      left:-18px;
+      bottom:-26px; 
+      z-index: 100;
+  }
+  /* 列表 */
+  .taskList a{
+    color: #fff;
+    font-size: 0.346667rem;
+    padding-top: 1.173333rem;
+  }
+  .taskList .classify{
+    width: 4.5rem;
+    height: 2.8rem;
+    text-align: center;
+  }
+  .download_btn{
+    /* left: 2.293333rem;
+    top: 0.8rem; */
+    left:50%;
+    top:40%;
+    margin-left:-0.6rem;
+    margin-top:-0.7rem;
+    width: 1.386667rem;
+    height: 1.52rem;
+    background: url("../images/btn_xiazai.png") no-repeat top;
+    background-size: 1.173333rem 1.173333rem;
+  }
+  a:nth-child(2){
+    right: 1.706667rem;
+    top: 0.8rem;
+    width: 2.133333rem;
+    height: 1.52rem;
+    background: url("../images/btn_yaoqing.png") no-repeat top;
+    background-size: 1.173333rem 1.173333rem;
+  }
+  .weixin_btn{
+    left: 2.293333rem;
+    top: 3.013333rem;
+    width: 1.386667rem;
+    height: 1.52rem;
+    background: url("../images/btn_weixin.png") no-repeat top;
+    background-size: 1.173333rem 1.173333rem;
+  }
+  .qita_btn{
+    right: 2.133333rem;
+    top: 3.013333rem;
+    width: 1.386667rem;
+    height: 1.52rem;
+    background: url("../images/btn_qita.png") no-repeat top;
+    background-size: 1.173333rem 1.173333rem;
+  }
+  /* 底部 */
+  footer{
+    height: 1.733333rem;
+    line-height: 1.733333rem;
+    background: #fff;;
+    /* padding: 0 1.706667rem; */
+    padding-top: 0.4rem;
+    bottom: 0;
+    box-sizing: border-box;
+    position: fixed;
+    width: 100%;
+  }
+  .footer_box {
+    display: inline-block;
+    width: 24%;
+    text-align: center;
+  }
+  footer a{
+    display: inline-block;
+    height: 0.426667rem;
+    line-height: 0.426667rem;
+    text-align: center;
+    color: #ccc;
+    padding-top: 0.8rem;
+    font-size: 0.213333rem;
+  }
+  
+  footer a.task{
+    background: url("../images/btn_renwu_n.png") no-repeat;
+    background-size: contain;
+    width: 0.666667rem;
+  }
+  footer a.issue{
+    background: url("../images/btn_fabu_s.png") no-repeat;
+    background-size: contain;
+    width: 0.88rem;
+  }
+  footer a.my{
+    background: url("../images/btn_wode_n.png") no-repeat;
+    width: 0.746667rem;
+    background-size: contain;
+  }
+  footer a.caipiao{
+    background: url("../images/btn_caipiao_n@2x.png") no-repeat;
+    width: 0.746667rem;
+    background-size: contain;
+  }

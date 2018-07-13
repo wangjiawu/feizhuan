@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>彩票</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/caipiao.css">
+    <script src="js/flexible.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header>彩票</header>
+        <!-- banner图 -->
+        <nav class="banner"></nav>
+        <!-- 列表 -->
+        <div class="list">
+            <a href="#">
+                <img src="./images/btn_shuangseqiu@2x.png" alt="" >
+            </a>
+            <a href="javascript:void(0)">
+                <img src="./images/btn_daletou@2x.png" alt="" @click=getMyIndex();>
+            </a>
+        </div>
+        <div class="line"></div>
+        <div class="award">
+            <div class="award-title-box flexbox">
+            	<h4 class="fb1">开奖信息</h4>
+            	<a class="light-gray" href="./kjInformation.html">更多></a>
+            </div>
+            <div class="award-content-box flexbox fb_acenter" v-for = "(item,index) in cpIndex" :key="index">
+            	<div class="award-content-img" :style={backgroundImage:`url(${item.type}==T001?'./images/icon_daletou@2x.png':'./images/icon_shuangseqiu@2x.png')`}></div>
+            	<div class="fb1">
+            		<p class="light-gray">{{item.issue}}</p>
+            		<div class="dlt">
+                        <!-- <span>{{item.code}}</span> -->
+                        <span v-for="item in num.red">
+                            {{ item }}
+                          </span>
+                        <span v-for="item in num.blue">
+                            {{ item }}
+                          </span>
+            		</div>
+            	</div>
+            </div>
+        </div>
+         
+    <footer>
+        <div class="footer_box"><a href="index.html" class="task active">任务</a></div>
+        <div class="footer_box"><a href="issue.html" class="issue">发布</a></div>
+        <div class="footer_box"><a href="caipiao.html" class="caipiao">彩票</a></div>
+        <div class="footer_box"><a href="my.html" class="my">我的</a></div>
+    </footer>
+    </div>
+    <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+    <script type="text/javascript" src="./js/vue.js"></script>
+    <script src="./script/api.js"></script>
+    <script src="./js/base.js"></script>
+    <script src="./script/caipiao.js"></script>
+    <!-- <script src="./script/cpBuyer.js"></script> -->
+</body>
+</html>

@@ -1,0 +1,105 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: #eee;
+}
+.main {
+  background: #eee;
+  padding: 0.133333rem 0.346667rem;
+}
+.main .header {
+  padding: 0.533333rem 0.56rem;
+  background: #fafafa;
+}
+.main .header ul li {
+  margin-bottom: 0.266667rem;
+}
+.main .header ul li .keys {
+  font-size: 0.4rem;
+  line-height: 0.4rem;
+  color: #333;
+  margin-right: 0.133333rem;
+}
+.main .header ul li .values {
+  font-size: 0.4rem;
+  line-height: 0.4rem;
+  color: #4090e9;
+}
+.main .content {
+  padding: 0.56rem 0.533333rem 0.8rem;
+  background: #fff;
+}
+.main .content .rmbnum .title {
+  font-size: 0.346667rem;
+  color: #333;
+}
+.main .content .rmbnum .rmbbtn {
+  padding: 0.346667rem 0.4rem;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+}
+.main .content .rmbnum .rmbbtn .btn {
+  display: inline-block;
+  width: 1.36rem;
+  height: 0.773333rem;
+  line-height: 0.773333rem;
+  border-radius: 0.426667rem;
+  text-align: center;
+}
+.main .content .rmbnum .rmbbtn .c20,
+.main .content .rmbnum .rmbbtn .c50 {
+  color: #666;
+  border: 0.053333rem solid #666;
+}
+.main .content .rmbnum .rmbbtn .c100,
+.main .content .rmbnum .rmbbtn .c200 {
+  color: #ccc;
+  border: 0.053333rem solid #ccc;
+}
+.main .content .rmbnum .rmbbtn .btn.action {
+  color: #4090e9;
+  border: 0.053333rem solid #4090e9;
+}
+.main .content .holder {
+  padding: 0.32rem 0 1.013333rem;
+}
+.main .content .holder .title {
+  font-size: 0.346667rem;
+  border-bottom: 0.053333rem solid #ccc;
+  color: #ccc;
+  line-height: 0.346667rem;
+  padding-bottom: 0.24rem;
+}
+.main .content .holder .text {
+  padding: 0.533333rem 0 0;
+}
+.main .content .holder .text .tit {
+  font-size: 0.346667rem;
+  line-height: 0.346667rem;
+  margin-bottom: 0.213333rem;
+}
+.main .content .holder .text .textCt {
+  font-size: 0.346667rem;
+  line-height: 0.4rem;
+  color: #999;
+}
+.main .content .payto .inp {
+  padding-bottom: 20px;
+  border-bottom: 0.026667rem solid #ccc;
+  margin-bottom: 0.533333rem;
+}
+.main .content .payto .inp input {
+  font-size: 0.346667rem;
+  line-height: 0.346667rem;
+  border: none;
+  width: 100%;
+}
+.main .content .payBtn {
+  background: url(../images/btn_tixian@2x.png);
+  background-size: 3.333333rem 1.093333rem;
+  width: 3.333333rem;
+  height: 1.093333rem;
+  margin-left: 2.453333rem;
+}

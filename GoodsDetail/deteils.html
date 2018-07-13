@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .banner{
+        width: 100%;
+    }
+    img{
+        display: inline-block;
+        width: 100%;
+    }
+</style>
+
+<body>
+    <div class="continer">
+        <div class="banner">
+            <img src="" alt="">
+        </div>
+        <p></p>
+    </div>
+
+</body>
+
+</html>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script>
+    function GetRequest() {
+        var url = decodeURI(location.search); //获取url中"?"符后的字串
+        var theRequest = new Object();
+        if (url.indexOf("?") != -1) {
+            var str = url.substr(1);
+
+            strs = str.split("&");
+
+            for (var i = 0; i < strs.length; i++) {
+                theRequest[strs[i].split("=")[0]] = decodeURIComponent(strs[i].split("=")[1]);
+            }
+        }
+        return theRequest;
+    }
+    var a = GetRequest();
+    console.log(a)
+    $(".banner img").attr("src",a.detailPic)
+    $(".continer p").html(a.goodsDetails)
+</script>

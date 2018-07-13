@@ -1,0 +1,311 @@
+body{
+  background: #8335d4;
+  position: relative;
+}
+header{
+  height: 1.12rem;
+  line-height: 1.12rem;
+  font-size: 0.453333rem;
+  text-align: center;
+  color: #fff;
+  position: fixed;
+  left:0px;
+  top:0px;
+  width:100%;
+  background: linear-gradient(to right,#8335d4,#1d148b);
+  z-index: 100; 
+}
+nav {
+  position: relative;
+  top:42px;
+}
+.banner img{
+  width: 100%;
+  border-top-left-radius: 0.32rem;
+  border-top-right-radius: 0.32rem;
+}
+.message{
+  height: 0.666667rem;
+  line-height: 0.666667rem;
+  background-color: #fff;
+  border-top: 0.08rem solid #eee;
+  border-bottom: 0.08rem solid #eee;
+  padding-left: 0.346667rem;
+}
+.message .laba{
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.4rem;
+  height: 0.4rem;
+  margin-right: 0.106667rem;
+}
+.message .xiaoxi {
+  font-size: 0.346667rem;
+  color: #8035d2;
+  vertical-align: middle;
+}
+.message .msg{
+  width: 6.533333rem;
+  font-size: 0.346667rem;
+  color: #999;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-right: 0.586667rem;
+}
+.xianliang{
+  height: 4.56rem;
+  background: #fff;
+  border-bottom: 0.08rem solid #eee;
+}
+.xianliang .xltitle{
+  margin-left: 0.346667rem;
+  font-size: 0.4rem;
+  color: #333;
+  text-align: center;
+}
+.xianliang .xltime{
+  margin-right: 0.346667rem;
+  font-size: 0.32rem;
+  color: #999;
+  margin-top: 0.08rem;
+}
+.xianliang .xlcenter{
+  margin-top: 0.48rem;
+  margin-left: 0.613333rem;
+}
+.xianliang .xlcenter a{
+  width: 1.866667rem;
+}
+
+.xianliang .xlcenter p{
+  text-align: center;
+  font-size: 0.373333rem;
+  height: 0.373333rem;
+  line-height: 0.373333rem;
+  color: #8035d2;
+}
+.xianliang .xlcenter span{
+  margin-left: 0.133333rem;
+  font-size: 0.373333rem;
+  color: #999;
+}
+.xianliang .xlcenter img{
+  width: 1.866667rem;
+  height: 1.866667rem;
+  margin-bottom: 0.133333rem;
+}
+.xianliang .xlbottom{
+  text-align: center;
+  font-size: 0.373333rem;
+  margin-top: 0.48rem;
+}
+.xianliang .xlbottom a{
+  padding-right: 0.346667rem;
+  color: #999;
+  background: url("../images/icon_arrow_right@2x.png") no-repeat right;
+  background-size: 0.186667rem 0.32rem;
+}
+.fanli{
+  background-color: #fff;
+  height: 5.2rem;
+  padding-top: 0.426667rem;
+  padding-left: 0.746667rem;
+  padding-right: 0.746667rem;
+  border-bottom: 0.08rem solid #eee;
+}
+.fanli .fanli1 img{
+  width: 4.106667rem;
+}
+.fanli .fanli2 img{
+  width: 4.08rem;
+}
+.fanli .fanli2{
+  width: 4.08rem;
+}
+.fanli .fanli2 a:first-child img{
+  margin-bottom: 0.133333rem;
+}
+.remen{
+  background-color: #fff;
+  border-bottom: 2px solid #eee;
+}
+.biaoti{
+  padding-top: 0.266667rem;
+  padding-bottom: 0.4rem;
+}
+.title{
+  margin-left: 0.346667rem;
+  font-size: 0.4rem;
+  color: #333;
+}
+a.more{
+  font-size: 0.32rem;
+  color: #999;
+  padding-right: 0.266667rem;
+  background: url("../images/icon_arrow_right@2x.png") no-repeat right;
+  background-size: 0.186667rem 0.32rem;
+  margin-right: 0.746667rem;
+  margin-top: 0.08rem;
+}
+.list {
+  margin-left: 0.586667rem;
+}
+.list li{
+  padding-bottom: 0.533333rem;
+}
+.list img{
+  width: 1.866667rem;
+  height: 1.866667rem;
+  margin-right: 0.4rem;
+}
+.rw .list {
+  padding-bottom:1.866667rem;
+}
+.download{
+  padding-top: 0.266667rem;
+}
+.gameName{
+  font-size: 0.373333rem;
+  color: #000;
+  height: 0.373333rem;
+  line-height: 0.373333rem;
+  margin-bottom: 0.106667rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow:ellipsis;
+}
+.dlNumber{
+  font-size: 0.32rem;
+  color: #999;
+  width: 4.026667rem;
+  margin-bottom: 0.293333rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow:ellipsis;
+}
+ .dlTime{
+  font-size: 0.32rem;
+  color: #999;
+  overflow: hidden;
+  width: 4.333333rem;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.price{
+  margin-right: 0.746667rem;
+  height: 0.56rem;
+  line-height: 0.56rem;
+  padding: 0 0.16rem;
+  color: #8035d2;
+  border: 2px solid #8035d2;
+  border-radius:  0.56rem;
+  margin-top: 0.586667rem;
+}
+.gameName .tip1{
+  margin-left: 0.133333rem;
+  height: 0.373333rem;
+  line-height: 0.373333rem;
+  background: #3ef320;
+  font-size: 0.24rem;
+  padding: 0 0.106667rem;
+  border-radius: 0.373333rem;
+  color: #fff;
+}
+.gameName .tip2{
+  margin-left: 0.133333rem;
+  height: 0.373333rem;
+  line-height: 0.373333rem;
+  background: #f72447;
+  font-size: 0.24rem;
+  padding: 0 0.106667rem;
+  border-radius: 0.373333rem;
+  color: #fff;
+}
+.gaoe,.siren,.rw{
+  background-color: #fff;
+  border-bottom: 2px solid #eee;  
+}
+.rw .rwTit{
+  padding: 0.266667rem 0.32rem 0.666667rem 0.32rem;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  width: 25%;
+  display: inline-block;
+}
+.rw .rwTit a{
+	flex-grow: 1;
+	text-align: center;
+}
+.rwTit img {
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+}
+
+img.friend,
+img.weixin,
+img.xz{
+  width: 2.853333rem;
+}
+img.friend,
+img.weixin{
+  margin-right: 0.293333rem;
+}
+a.one,a.two,a.three{
+  margin-right: 0;
+}
+footer{
+  height: 1.733333rem;
+  line-height: 1.733333rem;
+  background: #fff;;
+  /* padding: 0 1.706667rem; */
+  padding-top: 0.4rem;
+  bottom: 0;
+  box-sizing: border-box;
+  position: fixed;
+  width: 100%;
+}
+.footer_box {
+  display: inline-block;
+  width: 24%;
+  text-align: center;
+}
+footer a{
+  display: inline-block;
+  height: 0.426667rem;
+  line-height: 0.426667rem;
+  text-align: center;
+  color: #ccc;
+  padding-top: 0.8rem;
+  font-size: 0.213333rem;
+}
+
+footer a.task{
+  background: url("../images/btn_renwu_s.png") no-repeat;
+  background-size: contain;
+  width: 0.666667rem;
+  /* margin-right: 2.08rem; */
+}
+footer a.issue{
+  background: url("../images/btn_fabu_n.png") no-repeat;
+  background-size: contain;
+  width: 0.88rem;
+  /* margin-right: 2rem;  */
+}
+footer a.my{
+  background: url("../images/btn_wode_n.png") no-repeat;
+  width: 0.746667rem;
+  background-size: contain;
+}
+footer a.caipiao{
+  background: url("../images/btn_caipiao_n@2x.png") no-repeat;
+  width: 0.746667rem;
+  background-size: contain;
+}
+.xianlaing_box{
+  width: 30%;
+  text-align: center;
+  display: inline-block;
+}

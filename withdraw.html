@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>提现</title>
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"
+    />
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    <link rel="stylesheet" href="css/withdraw.css">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <script src="./js/vue.js"></script>
+    <script src="./js/md5.js"></script>
+    <script src="./js/base.js"></script>
+    <!-- <script src="./script/index.js"></script> -->
+</head>
+<style>
+    .title_price {
+        border: none;
+        display: inline-block;
+        width: 100%;
+        height: 1rem;
+        font-size: 0.5rem;
+    }
+</style>
+
+<body>
+    <div class="main">
+        <div class="header">
+            <ul>
+                <li>
+                    <span class="keys">可提现佣金</span>
+                    <span class="values">￥86.56</span>
+                </li>
+                <!-- <li>
+                    <span class="keys">账户余额&emsp;</span>
+                    <span class="values">￥10.01</span>
+                </li> -->
+            </ul>
+        </div>
+        <div class="content">
+            <div class="rmbnum">
+                <div class="title">
+                    提现金额
+                </div>
+                <div class="rmbbtn">
+                    <span class="btn c20">￥ 20</span>
+                    <span class="btn c50 action">￥ 50</span>
+                    <span class="btn c100">￥ 100</span>
+                    <span class="btn c200">￥ 200</span>
+                </div>
+            </div>
+            <div class="holder">
+                <input class="title_price" placeholder="其他金额" type="number" min="20" id="0" />
+                <div class="text">
+                    <div class="tit">
+                        温馨提示
+                    </div>
+                    <div class="textCt">
+                        每次提现不少于20元，提现手续费1%。
+                    </div>
+                </div>
+            </div>
+            <div class="payto">
+                <div class="inp">
+                    <input type="text" name="usernum" class="usernum" placeholder="支付宝账号">
+                </div>
+                <div class="inp">
+                    <input type="text" name="username" class="username" placeholder="支付宝姓名">
+                </div>
+            </div>
+            <div class="payBtn">
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src="./js/jquery-1.10.2.min.js"></script>
+<script src="./script/api.js"></script>
+<script>
+    $(".btn").click(function () {
+        $(".btn").removeClass("action");
+        $(this).addClass("action")
+    });
+    $(".title_price").change(function () {
+        var value = $(this).val()
+    });
+    var total;
+    $(".payBtn").click(function () {//点击提现
+        var usernum = $(".usernum").val()//账号
+        var username = $(".username").val();//名字
+        if (usernum && username) {
+            if ($(".btn.action")) {
+                total = $(".btn.action").html().slice(2) * 100
+                var id = $(".btn.action").attr("id");
+               
+                applyCash(id, total, usernum, username)
+            } else if ($(".title_price").val()) {
+                if ($(".title_price").val() > 20) {
+                    total = $(".title_price").val() * 100;
+                   
+                    applyCash(0, total, usernum, username)
+                } else {
+                    alert("每次提现不少于20元")
+                }
+            }
+        } else {
+            alert("请填写正确支付宝账号或姓名")
+        }
+
+    });
+    (function cashilts() {//提现额度
+        $.ajax({
+            type: "post",
+            url: API + "/user/cashilts.wckj",
+            dataType: "json",
+            data: {
+                "uid": localStorage.uid,
+                "t": "1528940321003",
+                "uuid": "99000708107109",
+                "v": "V1.2.0",
+                "h": "85c57f0862c7a316a09b1f60b50bcf05",
+                "c": "A0000"
+            },
+            success(res) {
+                console.log(res)
+                if (res.resultCode == 10000) {
+                    $(".rmbbtn span").eq(0).attr("id", res.resultData.list[0].id);
+                    $(".rmbbtn span").eq(1).attr("id", res.resultData.list[1].id)
+                    $(".rmbbtn span").eq(2).attr("id", res.resultData.list[2].id)
+                    $(".rmbbtn span").eq(3).attr("id", res.resultData.list[3].id)
+                }
+            },
+            error(info) {
+                console.log(info)
+            }
+        })
+
+    })();
+    function applyCash(id, money, alipayAccount, alipayName) {
+        $.ajax({
+            type: "post",
+            url: API + "/user/applyCash.wckj",
+            dataType: "json",
+            data: {
+                "uid": localStorage.uid,
+                "id": id,
+                "money": money,
+                "alipayAccount": alipayAccount,
+                "alipayName": alipayName,
+                "token": localStorage.token,
+                "t": "1528940321003",
+                "uuid": "99000708107109",
+                "v": "V1.2.0",
+                "h": "85c57f0862c7a316a09b1f60b50bcf05",
+                "c": "A0000"
+            },
+            success(res) {
+                console.log(res)
+                if(res.resultCode==10000){
+                    alert("申请提现成功。提现审核时间3-7个工作日，账户信息与提交的资料有误将会影响打款时间")
+                }else{
+                    alert(res.resultMsg)
+                }
+            },
+            error(info) {
+                console.log(info)
+            }
+        })
+    }
+</script>
+
+</html>

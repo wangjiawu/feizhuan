@@ -1,0 +1,188 @@
+header{
+  background: #0f9beb;
+  height: 1.226667rem;
+  line-height: 1.226667rem;
+  text-align: center;
+  font-size: 0.466667rem;
+  color: #fff;
+}
+.banner{
+  /* padding: 0 0.533333rem; */
+}
+.ban_img{
+  height: 4rem;
+  text-align: center;
+  padding: 0.133333rem 0;
+  box-sizing: border-box;
+  margin-bottom: 0.32rem;
+}
+.ban_img img{
+  height: 3.733333rem;
+}
+.ban_msg{
+  margin-left: -0.2rem;
+  font-size: 0.453333rem;
+  color: #333;
+}
+.ban_title{
+  margin-bottom: 0.4rem;
+  height: 0.4rem;
+  line-height: 0.4rem;
+  padding-top: 0.5rem;
+}
+.ban_price{
+  height: 0.4rem;
+  line-height: 0.4rem;
+}
+.ban_price p{
+  display: inline-block;
+  line-height: 1;
+  
+}
+.ban_price p.sm{
+  font-size: 0.32rem;
+  color: #666;
+}
+.ban_price p{
+  font-size: 0.4rem;
+  height: 0.4rem;
+}
+.ban_price p.red{
+  color: #e9071c;
+}
+.jdt{
+  margin-bottom: 0.32rem;
+}
+.jdt .time{
+  text-align: left;
+  font-size: 0.32rem;
+  color: #ff5550;
+  margin-bottom: 0.266667rem;
+}
+.jdt .t{
+  height: 0.133333rem;
+  width: 8rem;
+  margin: 0 auto;
+  background: #dfdfdf;
+  border-radius: 0.133333rem;
+  margin-bottom: 0.133333rem;
+}
+.jdt .t .orange{
+  background: #ff9941;
+  width: 20%;
+  height: 100%;
+  border-radius: 0.133333rem;
+}
+.num>div{
+  font-size: 0.32rem;
+  color: #999;
+}
+.num p{
+  display: inline-block;
+}
+.num .ocolor{
+  color: #ff9941;
+}
+.num .bcolor{
+  color: #0f9aeb;
+}
+
+.detail .det_img{
+  width: 10rem;
+  height: 3.386667rem;
+  background: url('../images/img_1.jpg')no-repeat center center;
+  background-size: 10rem 3.386667rem;
+}
+.detail .det_img>div{
+  top: 0.826667rem;
+  left: 3.506667rem;
+  width: 2.613333rem;
+  height: 1.573333rem;
+}
+.detail .det_img .big{
+  font-size: 0.56rem;
+  text-align: center;
+  font-weight: bold;
+  color: #fb9845;
+  height: 0.56rem;
+  line-height: 0.56rem;
+  margin-bottom: 0.16rem;
+}
+.detail .det_img .tel{
+  font-size: 0.4rem;
+  color: #fb9845;
+  text-align: center;
+  height: 0.4rem;
+  line-height: 0.4rem;
+  margin-bottom: 0.133333rem;
+}
+.detail .det_img .jp{
+  font-size: 0.346667rem;
+  color: #ccbaa3;
+  height: 0.346667rem;
+  line-height: 0.346667rem;
+  text-align: center;
+}
+
+.detail .det_msg .tw{
+  padding: 0 0.4rem;
+  height: 1.28rem;
+  line-height: 1.28rem;
+  border-bottom: 1px solid #dedede;
+}
+.detail .det_msg .tw .l{
+  font-weight: 600;
+  font-size: 0.32rem;
+  color: #333;
+}
+.detail .det_msg .tw .r{
+  font-size: 0.24rem;
+  color: #999;
+}
+
+.detail .det_msg .jl .jl_title{
+  padding: 0 0.4rem;
+  font-size: 0.32rem;
+  color: #999;
+  height: 0.8rem;
+  line-height: 0.8rem;
+}
+.detail .det_msg .jl .jl_det{
+  padding: 0 0.4rem;
+  height: 1.173333rem;
+  line-height: 1.173333rem;
+  font-size: 0.32rem;
+  background: #eee;
+}
+.detail .det_msg .jl .jl_det .l{
+  color: #333;
+}
+.detail .det_msg .jl .jl_det .r{
+  color: #999;
+}
+.detail .det_msg .jl .bqjl{
+  height: 1.6rem;
+  font-size: 0.32rem;
+}
+.detail .det_msg .jl .bqjl .jl_det{
+  height: 1.6rem;
+  background: #eee;
+  border-bottom: 1px solid #fff;
+}
+.detail .det_msg .jl .bqjl .jl_det .hao{
+  height: 0.32rem;
+  line-height: 0.32rem;
+  padding-top: 0.373333rem;
+  padding-bottom: 0.266667rem;
+  color: #666;
+}
+.detail .det_msg .jl .bqjl .l{
+  color: #333;
+  height: 0.32rem;
+  line-height: 0.32rem;
+}
+.detail .det_msg .jl .bqjl .r{
+  color: #999;
+  height: 0.32rem;
+  line-height: 0.32rem;
+}

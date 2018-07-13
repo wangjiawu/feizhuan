@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>发布任务</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/newprojects.css">
+    <script type="text/javascript" src="./js/flexible.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <a href="javascript:history.go(-1);" class="back"></a>
+            <span>发布任务</span>
+        </header>
+        <div class="content">
+            <div class="taskName">
+                <label>任务名称</label>
+                <input type="text" placeholder="在这里输入任务名称" / onblur="this.placeholder ='在这里输入任务名称'" />
+                <span>*</span>
+            </div>
+            <div class="description">
+                <label>任务描述</label>
+                <input type="textarea" placeholder="任务内容说明80字符以内" / onblur="this.placeholder ='任务内容说明80字符以内'" />
+                <span class="import">*</span>
+            </div>
+            <div class="zhuce">
+                <input type="radio" name="register" value="注册" checked="checked" class="register" />
+                <p>注册</p>
+                <input type="radio" name="register" value="试玩" class="play" />
+                <p>试玩</p>
+            </div>
+            <div class="price">
+                <label>佣金价格</label>
+                <input type="text" placeholder="￥0.00" onfocus="this.placeholder=''" / onblur="this.placeholder ='￥0.00'" />元/个
+                <span>*</span>
+            </div>
+            <div class="tasknum">
+                <label>任务数量</label>
+                <input type="text" placeholder="xxx" onfocus="this.placeholder=''" / onblur="this.placeholder ='xxx'" />个
+                <span>*</span>
+            </div>
+            <div class="yaoqingma">
+                <label>邀请码</label>
+                <input type="text" placeholder="邀请码" onfocus="this.placeholder=''" / onblur="this.placeholder ='邀请码'" />
+                <span>*</span>
+            </div>
+            <div class="wechatId">
+                <label>微信号</label>
+                <input type="text" placeholder="微信号" onfocus="this.placeholder=''" / onblur="this.placeholder ='微信号'" />
+                <span>*</span>
+            </div>
+            <div class="lianjie">
+                <label>链&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;接</label>
+                <input type="text" placeholder="请输入相关信息" onfocus="this.placeholder=''" / onblur="this.placeholder ='请输入相关信息'" />
+                <span>*</span>
+            </div>
+            <div class="xgxx">
+                <label>相关信息</label>
+                <input type="text" placeholder="请输入相关信息" onfocus="this.placeholder=''" / onblur="this.placeholder ='请输入相关信息'" />
+                <span>*</span>
+            </div>
+            <div class="images">
+                <label>图&nbsp;&nbsp;&nbsp;片</label>
+                <input type="file" accept="./images/btn_tupian.png" onchange='img4BrowseFolder()' id="bug_file" name="bug_file" alt="">
+            </div>
+            <div class="tally">
+                <label>标&nbsp;&nbsp;&nbsp;签</label>
+                <div class="a1">
+
+                </div>
+            </div>
+            <ul class="tallyUl">
+
+            </ul>
+
+            <div class="deadline">
+                <label>任务有效期</label>
+                开始时间
+                <input type="date" class="fr"> 结束时间
+                <input type="date" class="fr">
+
+
+            </div>
+            <div class="remarks">
+                <label>备注</label>
+                <input type="text">
+
+            </div>
+            <div class="user">
+                <input type="radio" checked>
+                <a href="#">用户使用协议</a>
+            </div>
+        </div>
+        <footer>确认任务</footer>
+        <div class="mask hide">
+            <div class="center">
+                <div class="money">佣金：00.00元</div>
+                <div class="msgs">账户金额不足，将无法支付佣金
+                    <br>先充值，再发布吧！</div>
+                <div class="btn">
+                    <img src="./images/btn_quchongzhi@2x.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="./js/jquery-1.6.4.min.js"></script>
+    <script src="./artTemplate/template.js"></script>
+    <script src="./script/api.js"></script>
+    <script src="./js/vue.js"></script>
+    <script type="text/javascript" src="js/ajaxfileupload.js"></script>
+    <script type="text/template" id="LebelTpl">
+        {{each resultData as item i}}
+        <li class="register" id="{{item.id}}" style="color:{{item.colo}}" >{{item.name}}</li>
+        {{/each}}
+    </script>
+</body>
+
+</html>
+
+
+<!-- <script>
+    new Vue({
+        el: '#app',
+        data() {
+            return {
+                request: {
+                    name: "",
+                    money: "",
+                    number: '',
+                    note: '',
+                    beginTime: "",
+                    endTime: "",
+                    img1: '',
+                    urlWeb: '',
+                    relatedInfo: '',
+                    inviteCode: '',
+                    userId: '',
+                },
+
+                labelArr: [],
+                isShowabelArr: [],
+            }
+        },
+        created() {
+            this.getLebel()
+
+        },
+        methods: {
+            //方法已经写好了你按照对应的参数 放进里面就行了
+            addTask() {
+
+                this.request.userId = localStorage.uid
+
+                $.ajax({
+                    url: API + "/task/addTask.wckj",
+                    type: 'POST',
+                    data: this.request,
+                    success(res) {
+                        console.log(res)
+                        if (res.resultCode == 10000) {
+                            window.location.href = 'Releasesuccess.html?(id)';
+                        }
+                    },
+                    error() {
+
+                    }
+                })
+            },
+            //上传图片
+            img4BrowseFolder() {
+                console.log(22222);
+                var that = this;
+                $.ajaxFileUpload({
+                    url: 'http://114.55.225.181:8002/android_img.wckj', //用于文件上传的服务器端请求地址
+                    secureuri: false, //是否需要安全协议，一般设置为false
+                    fileElementId: 'bug_file', //文件上传域的ID
+                    dataType: 'json', //返回值类型 一般设置为json
+                    success(res) {
+                        console.log(res)
+                        if (res.resultCode == 10000) {
+                            console.log("上传成功" + res.resultData);
+                        }
+                    },
+                    error(error) {
+                        console.info("调用error");
+                        console.log(error);
+                    }
+                });
+            },
+            //所有标签
+            getLebel() {
+                $.ajax({
+                    url: API + '/task/getLabel.wckj',
+                    success: res => this.labelArr = res.resultData
+                })
+            },
+            isShowabel(n) {
+
+                if (this.isShowabelArr.indexOf(n) != -1) return;
+
+                if (this.isShowabelArr.length == 3) this.isShowabelArr.shift()
+
+                this.isShowabelArr.push(n)
+
+            }
+        }
+    })
+    var url = decodeURI(location.search);
+    console.log(url)
+</script> -->
+<script>
+
+    function GetRequest() {
+        var url = decodeURI(location.search); //获取url中"?"符后的字串
+        var theRequest = new Object();
+        if (url.indexOf("?") != -1) {
+            var str = url.substr(1);
+
+            strs = str.split("&");
+
+            for (var i = 0; i < strs.length; i++) {
+                theRequest[strs[i].split("=")[0]] = decodeURIComponent(strs[i].split("=")[1]);
+            }
+        }
+        return theRequest;
+    }
+    var a = GetRequest();
+
+    $(".taskName input").val(a.name);
+    $(".description input").val(a.content);
+    $(".content").attr("id", a.id);
+
+
+    (function getLebel() {
+        $.ajax({
+            url: API + '/task/getLabel.wckj',
+            success(res) {
+                console.log(res)
+                if (res.resultCode == 10000) {
+                    var html = template("LebelTpl", res);
+                    $(".tallyUl").append(html);
+
+                    $(".tallyUl li").click(function (e) {
+
+                        var length = $(".a1").children("div").length;
+                        var arrDiv = [];
+                        var div = $("<div id=" + $(this)[0].id + ">" + $(this)[0].innerHTML + "</div>")
+                        $(".a1").append(div);
+
+                        // console.log(length)
+                        for (var i = 0; i <= length; i++) {
+                            arrDiv.push($(".a1").children("div")[i].id)
+
+                            var nary = arrDiv.sort();
+                            // console.log(nary)
+                            for (var j = 0; j < nary.length - 1; j++) {
+                                if (nary[j] == nary[j + 1]) {
+                                    var a = $(".a1").children("div")[i].id
+                                    $(".a1").children("div")[i].remove();
+                                    var b = $(".a1").children("div")[j].id
+                                    if (a == b) {
+                                        $(".a1").children("div")[j].remove();
+                                    } else {
+
+                                        $(".a1").find("div#" + a + "").remove();
+                                    }
+
+
+                                }
+                            }
+
+                        }
+
+
+                    })
+
+                }
+            }
+        })
+    })()
+    function img4BrowseFolder() {//上传图片
+        var that = this;
+        $.ajaxFileUpload({
+            url: 'http://114.55.225.181:8002/android_img.wckj', //用于文件上传的服务器端请求地址
+            secureuri: false, //是否需要安全协议，一般设置为false
+            fileElementId: 'bug_file', //文件上传域的ID
+            dataType: 'json', //返回值类型 一般设置为json
+            success(res) {
+                // console.log(res)
+                if (res.resultCode == 10000) {
+                    $(".images input").attr("data-url", res.resultData)
+                    console.log("上传成功" + res.resultData);
+                }
+            },
+            error(error) {
+                console.info("调用error");
+                console.log(error);
+            }
+        });
+    }
+
+    if (a.id == 8) {//微信  微信号 连接
+        $(".yaoqingma").hide();
+        $(".xgxx").hide();
+        $(".images").hide();
+
+    } else if (a.id == 10) {//好友邀请 邀请码 连接
+        $(".wechatId").hide();
+        $(".xgxx").hide();
+        $(".images").hide();
+    } else if (a.id == 11) {//其他 相关信息 连接
+        $(".images").hide();
+        $(".wechatId").hide();
+        $(".yaoqingma").hide();
+    }
+    $("footer").click(function () {
+        var label = [];
+        label.length = $(".a1").children().length;
+        for (var i = 0; i < label.length; i++) {
+            var item = label[i] = {};
+            item['labelName'] = $(".a1").children()[i].innerHTML;
+
+        }
+        var name = $(".taskName input").val();
+        var price = $(".price input").val() * 100;
+        var content = $(".description input").val();
+        var number = Number($(".tasknum input").val());
+        var note = $(".remarks input").val();
+        var beginTime = $(".deadline input").eq(0).val() + " 00:00:00";
+        var endTime = $(".deadline input").eq(1).val() + " 00:00:00";
+        var img1 = $(".images input").data("url");
+        var urlWeb = $(".lianjie input").val();
+        var relatedInfo = $(".xgxx input").val();
+        var inviteCode = $(".yaoqingma input").val()
+        var wechatId = $(".wechatId input").val();
+
+        if (content && name && price && number && note && beginTime && endTime) {
+
+            $.ajax({
+                type: "post",
+                url: API + "/task/addTask.wckj",
+                dataType: "json",
+                data: {
+                    "name": name,
+                    "money": price,
+                    "description": content,
+                    "number": number,
+                    "note": note,
+                    "beginTime": beginTime,
+                    "endTime": endTime,
+                    "img1": img1,
+                    "urlWeb": urlWeb,
+                    "relatedInfo": relatedInfo,
+                    "inviteCode": inviteCode,
+                    "wechatId": wechatId,
+                    "userId": localStorage.uid,
+                    "t": "1528940321003",
+                    "uuid": "99000708107109",
+                    "v": "V1.2.0",
+                    "h": "85c57f0862c7a316a09b1f60b50bcf05",
+                    "c": "A0000",
+                    "icon": localStorage.icon,
+                    "banner": "",
+                    "content": content,
+                    "introduction": "",
+                    "urlApk": "",
+                    "packageName": "",
+                    "size": "",
+                    "label": label
+
+
+                },
+                success(res) {
+                    console.log(res)
+                
+                    //res.resultData:96
+                    if (res.resultCode == 10000) {
+                        window.location.href = "Releasesuccess.html?id=" + res.resultData;
+                    } else if (res.resultCode == 30009) {//余额不足
+                        $(".mask").show();
+                        $(".mask .btn").click(function () {
+                            window.location.href = "recharge.html"
+                        })
+                    }else{
+                        alert(res.resultMsg)
+                    } 
+                },
+                error(info) {
+                    console.log("oooo" + info)
+                }
+            })
+        } else {
+            if (price == 0) {
+                alert("请输入正确的佣金价格")
+            }
+            if (note == "") {
+                alert("请输入备注信息")
+            }
+            if (number == 0) {
+                alert("请输入数量")
+            }
+            if (beginTime == " 00:00:00") {
+                alert("请选择开始时间")
+            } if (endTime == " 00:00:00") {
+                alert("请选择结束时间")
+            }
+        }
+
+    })
+
+
+</script>
+<style scoped>
+    .a1 {
+        display: flex;
+        width: 100%;
+    }
+
+    .a1>div {
+        margin-left: 5%;
+    }
+
+    .register {
+        margin-left: 5%;
+    }
+
+    .deadline {
+        display: flex;
+    }
+
+    .tallyUl {
+        padding-bottom: 0.4rem;
+    }
+</style>

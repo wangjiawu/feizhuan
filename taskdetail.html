@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>任务详情</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/taskdetail.css">
+    <script type="text/javascript" src="./js/flexible.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div class="tabbar pof">
+            任务详情
+        </div>
+        <div class="content por">
+            <div class="xz1 fl">
+                <img :src="taskDetail.task.icon" :alt="taskDetail.task.name">
+                <span class="span1">{{taskDetail.task.name}}</span>
+                <span class="span2">佣金：￥{{taskDetail.task.money}}</span>
+                <span class="span3">剩余数量：&nbsp;{{taskDetail.task.numberFinish}}份</span>
+                <span class="span4">发布时间：{{taskDetail.task.addTime}}</span>
+                <span class="span5"  v-for="(i, index) in taskDetail.label" :key="index">
+                    <span :style="{backgroundColor: i.labelColor}">{{i.labelName}}</span>
+                </span>
+            </div>
+            <h2>任务说明</h2>
+            <div class="xz2 por" v-for="(i,index) in taskDetail.explain" :key="index"> 
+                <h3>{{i.title}}</h3>
+                <span>+￥{{i.money/100}}</span>
+                <p>{{i.description }}</p>
+                <div class="ok" v-if="taskDetail.explain[0].stateExplain == 3">
+                     <img src="./images/yuan_upload@2x.png" alt="">
+                </div>
+                <div class="ok" v-if="taskDetail.explain[0].stateExplain == 2">
+                    <img src="./images/yuan_wancheng@2x.png" alt="">
+               </div>
+               <div class="ok" v-if="taskDetail.explain[0].stateExplain == 1">
+                <img src="./images/yuan_shibai@2x.png" alt="">
+                </div>
+                <div class="ok" v-if="taskDetail.explain[0].stateExplain == 0">
+                    <img src="./images/yuan_shenhe@2x.png" alt="">
+                </div>
+            </div>
+           <!-- <div class="xz2 xz3 por">
+                <h3>2.注册得奖励</h3>
+                <span>+￥20</span>
+                <p>打开APP，点击“我的”注册登录，浏览<br>5分钟以上内容。上传“我的”界面截图<br>和应用首页截图，共2张</p>
+                <div class=" ok">
+                    <img src="./images/yuan_daiwancheng@2x.png" class="bg"> 
+                 </div>
+            </div>
+            <div class="xz2 xz4 por">
+                <h3>3.购买一本故事书</h3>
+                <span>+￥20</span>
+                <p>在商城当中，购买一本故事书</p>
+                <div class=" ok">
+                    <img src="./images/yuan_daiwancheng@2x.png" class="bg"> 
+                 </div>
+            </div>  -->
+            <!-- <div class="more">
+                展开全部
+                <img src="./images/btn_more@2x.png">
+            </div> -->
+            <div class="bar"></div>
+            <h2>图片介绍</h2>
+            <div class="imgs">
+                <img :src="taskDetail.task.img1">
+                <img :src="taskDetail.task.img2">
+            </div>
+            <h2>文字说明</h2>
+            <div class="xz2 wz">
+                <h3>大小：{{taskDetail.task.size}}M</h3>
+                <h3>已有23人完成</h3>
+            </div>
+            <h2>任务说明</h2>
+            <p v-for="(i, index) in taskDetail.audit" :key="index" class="taskContent">
+                <span class="taskContent">{{i.description}}</span>
+            </p>
+            <h2 class="hh2">任务有效期：3天后结束</h2>
+        </div>
+        <div class="bottom pof" v-if="taskDetail.task.stateUserTask == 1">
+            <a href="#">审核中</a>
+       </div>
+       <div class="bottom pof" v-if="taskDetail.task.stateUserTask == 2">
+           <a href="#">完成</a>
+       </div>
+       <div class="bottom pof" v-if="taskDetail.task.stateUserTask == 3">
+            <a href="#">审核失败</a>
+       </div>
+        <div class="bottom pof" v-if="taskDetail.task.stateUserTask == 4">
+            <a href="#">过期</a>
+        </div>
+        <div v-if = "taskDetail.task.stateUserTask == 0" class="bottom pof">
+            <label>上传截图
+                <input type='file' id="bug_file" name="bug_file" @change="img4BrowseFolder()" style="opacity:0;position:absolute;top:0;left:0;width:200px;height:20px;cursor:pointer;"/>
+            </label> 
+        </div>
+        <div v-if = "taskDetail.task.stateUserTask == 5" class="bottom pof" @click='getTask()'>
+            <a href="#">领取任务</a>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+    <script type="text/javascript" src="js/ajaxfileupload.js"></script>
+    <script type="text/javascript" src="./js/vue.js"></script>
+    <script type="text/javascript" src="script/api.js"></script>
+    <script type="text/javascript" src="js/cookie.js"></script>
+    <script type="text/javascript" src="script/util.js"></script>
+    <script type="text/javascript" src="script/taskdetail.js"></script>
+</body>
+</html>

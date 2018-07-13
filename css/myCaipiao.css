@@ -1,0 +1,102 @@
+header{
+  height: 1.12rem;
+  line-height: 1.12rem;
+  font-size: 0.453333rem;
+  text-align: center;
+  color: #fff;
+  position: fixed;
+  left:0px;
+  top:0px;
+  width:100%;
+  background: linear-gradient(to right,#8335d4,#1d148b);
+  z-index: 100; 
+}
+header a {
+  float: left;
+  width: 0.226667rem;
+  height:0.4rem;
+  margin-top: 0.4rem;
+  margin-left:0.366667rem; 
+}
+.back {
+  background: url('../images/back.png') no-repeat;
+  background-size: 100% 100%;
+  font-size: 0.373333rem;
+}
+.tabContain{
+  margin-top: 1.12rem;
+  padding: 0.346667rem 0;
+}
+.tabContain .tab{
+  margin-left: 2.666667rem;
+}
+.tabContain .tab .btn_item{
+  margin-right: 0.733333rem;
+  margin-bottom: 0.4rem;
+}
+.tabContain .tab .btn_item img{
+  width: 0.426667rem;
+  margin-right: 0.266667rem;
+}
+.tabContain .tab .btn_item span{
+  display: inline-block;
+  height: 0.426667rem;
+  line-height: 0.426667rem;
+  font-size: 0.426667rem;
+}
+.tabContain .tab .btn_item.active span{
+  color: #ff4646;
+  border-bottom: 4px solid #ff4646;
+  padding-bottom: 0.133333rem;
+}
+.tabContain .tab_list .list_item{
+  display: none;
+}
+.tabContain .tab_list .list_item.on{
+  display: block;
+}
+.tabContain .tab_list .list_item .dd_list{
+  padding: 0.293333rem 0.346667rem;
+}
+.tabContain .tab_list .times{
+  font-size: 0.346667rem;
+}
+.tabContain .tab_list .state{
+  font-size: 0.293333rem;
+}
+.tabContain .tab_list .state.green{
+  color: #8aec9c;
+}
+.tabContain .tab_list .state.red{
+  color: #ff4141;
+}
+.tabContain .tab_list .state.gray{
+  color:#7e7979
+}
+.tab_list .list_item .dd_list{
+  border-bottom: 0.08rem solid #eee;
+}
+.tab_list .list_item .dd_list .ball{
+  margin-top: 0.533333rem;
+}
+.tab_list .list_item .dd_list li{
+  float: left;
+  display: block;
+  width: 0.826667rem;
+  height: 0.826667rem;
+  border-radius: 50%;
+  line-height: 0.826667rem;
+  text-align: center;
+  font-size: 0.453333rem;
+  color: #fff;
+  margin-right: 0.586667rem;
+}
+.tab_list .list_item .dd_list li.redBall{
+  background: #f34756;
+}
+.tab_list .list_item .dd_list li.blueBall{
+  background: #4565eb;
+}
+.tab_list .list_item .dd_list li:last-child{
+  margin-right: 0px;
+}

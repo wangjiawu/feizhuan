@@ -1,0 +1,111 @@
+
+header{
+    height: 1.12rem;
+    line-height: 1.12rem;
+    font-size: 0.453333rem;
+    text-align: center;
+    color: #fff;
+    position: fixed;
+    left:0px;
+    top:0px;
+    width:100%;
+    background: linear-gradient(to right,#8335d4,#1d148b);
+    z-index: 100; 
+  }
+  header a {
+    float: left;
+    width: 0.226667rem;
+    height:0.4rem;
+    margin-top: 0.4rem;
+    margin-left:0.366667rem; 
+}
+.back {
+   background: url('../images/back.png') no-repeat;
+   background-size: 100% 100%;
+   font-size: 0.373333rem;
+}
+.content {
+  background: rgb(255,255,255);
+  position: absolute;
+  top:0.1rem;
+  right: 0;
+  left: 0.3rem;;
+  bottom:0;
+  padding:0 0.246667rem;
+  padding-top: 1rem;
+  /* font-size: 0.373333rem; */
+}
+.content .buyer{
+  margin-top:0.3rem;
+  font-size: 0.4rem;
+}
+.content .personal {
+  margin-top: 0.5rem;
+  height: 2.2rem;
+  /* line-height: 2.2rem; */
+}
+.personal label {
+  float: left;
+  padding-top:0.5rem;
+}
+.personal .name {
+  padding-left: 0.9rem;
+  font-size: 0.5rem;
+}
+.cardId {
+  padding-left: 0.9rem;
+  padding-top:0.2rem;
+  /* font-size: 0.4rem; */
+}
+.cardId .phone {
+  padding-left: 1.3rem;
+}
+.bianji a{
+  float: right;
+  padding-top: -0.5rem;
+  height:0.6rem ;
+  width:0.6rem;
+  background: url('../images/btn_xiugai_shense@2x.png') no-repeat;
+  background-size: 100% 100%;
+}
+.buy {
+  background-color:#fff;
+  height:6.173333rem;
+  /* line-height: 1.173333rem; */
+  color: #333;
+  border-radius:0.133333rem;
+  margin-top:0.533333rem;
+}
+.purchase {
+  padding-top: 0.5rem;
+  padding-left: 0.26rem;
+}
+.purchase .gmsl {
+  display: inline-block;
+  font-size: 0.4rem;
+}
+.purchase .sub {
+  background: #4566eb;
+  color: #fff;
+  text-align: center;
+  padding: 0.2rem 0.299rem;
+}
+.purchase .add {
+  background: #4566eb;
+  color: #fff;
+  text-align: center;
+  padding: 0.2rem 0.25rem;
+
+}
+.order {
+  margin-top:1rem;
+  text-align: center;
+  background: #4566eb;
+  color: #fff;
+  font-size: 0.4rem;
+  width: 60%;
+  height: 1.2rem;
+  line-height: 1.2rem;
+  border-radius: 0.2rem;
+  margin: 1.3rem auto 0.5rem;
+}

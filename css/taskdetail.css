@@ -1,0 +1,219 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a:hover, a:visited, a:link, a:active {
+    text-decoration: none;
+    color: #fff;
+}
+.por{
+    position: relative;
+}
+.poa{
+    position: absolute;
+}
+.pof{
+    position: fixed;
+    z-index: 100;
+}
+.tabbar{
+    width: 100%;
+    top: 0;
+    background: #371c9f;
+    height: 1.133333rem;
+    line-height: 1.133333rem;
+    text-align: center;
+    font-size: 0.453333rem;
+    color: #fff;
+}
+.bottom{
+    width: 100%;
+    bottom: 0;
+    background: #7d33d0;
+    height: 1.333333rem;
+    line-height: 1.333333rem;
+    text-align: center;
+    font-size: 0.453333rem;
+    color: #fff;
+}
+.bottom>a{
+    /* display: block; */
+    width: 100%;
+    height: 100%;
+}
+.content{
+    padding-top: 1.133333rem;
+    padding-bottom: 1.333333rem;
+    box-sizing: border-box;
+}
+.content>.xz1{
+    width: 100%;
+    margin-top: 0.4rem;
+    padding-left:0.36rem;
+    padding-right: 0.36rem;
+    box-sizing: border-box;
+    height: 2.333333rem;  
+}
+.content>.xz1>img{
+    width: 2.333333rem;
+    float: left;
+}
+ .xz1 .span1{
+    float: left;
+    margin-top: 0.293333rem;
+    margin-left: 0.266667rem;
+    font-size: 0.346667rem;
+}
+.xz1 .span2{
+    float: right;
+    margin-top: 0.293333rem;
+    font-size: 0.346667rem;
+    color: #9539f5;
+}
+.xz1 .span3{
+    float: left;
+    margin-left: -1.7rem;
+    margin-top: 1.1rem;
+    color: #b6b6b6;
+    font-size: 0.293333rem;
+}
+.xz1 .span4{
+    margin-top: 2rem;
+    color: #b6b6b6;    
+    float: left;
+    margin-left: -2rem;
+    font-size: 0.293333rem;
+}
+.xz1 .span5{
+    float: right;
+    margin-top: 1rem;
+   
+}
+.span5 span {
+    font-size: 0.293333rem;
+    color: #fff;
+    width: 0.8rem;
+    height: 0.533333rem;
+    line-height: 0.533333rem;  
+    display: block;
+    text-align: center;
+    border-radius: 0.066667rem;
+}
+.span5>a{
+    display: inline-block;
+    height: 0.453333rem;
+    width: 0.933333rem;
+    border: 0.026667rem double #ff9999;
+    border-radius: 0.133333rem;
+    background: #ff4141;
+    text-align: center;
+}
+.span5>a:nth-child(2){
+    border: 2px double #ffe59e;
+    background: #ffcc41;   
+    margin-left: 0.133333rem;
+}
+
+.content>h2{
+    margin-top: 0.64rem;
+    font-size: 0.346667rem;
+    padding-left: 0.586667rem;
+    color:#7d33d0;
+}
+.content>.xz2{
+    width: 100%;
+    padding-left:0.906667rem; 
+    padding-bottom: 0.1rem;
+    padding-right: 0.373333rem;
+    box-sizing: border-box;
+}
+.content>.xz2>h3{
+    font-size: 0.346667rem;
+    padding-right:0.6rem;
+    display: inline-block;
+    padding-top: 0.23rem;
+}
+.content>.xz2>span{
+    font-size: 0.346667rem;   
+    float: right;
+    margin-right: 0.346667rem;
+    color: #7d33d0;
+}
+.content>.xz2>p{
+    font-size: 0.293333rem;
+    color: #999;
+    margin-top: 0.366667rem;
+    height: 0.566667rem;
+    line-height: 0.566667rem;
+    width: 80%;
+}
+.xz2 .task {
+    margin: 0.266667rem 0;
+}
+.ok {
+    float: right;
+    /* width: 1.466667rem;
+    height:1.466667rem; */
+}
+.ok img{
+    width: 1.466667rem;
+    height:1.466667rem;
+    /* background:url('../images/yuan_daiwancheng@2x.png') no-repeat;  
+    background-size: 100% 100%;     */
+    margin-top: -0.78rem;
+}
+.content>.xz3{
+    margin-top: 0.933333rem;
+}
+.content>.xz4{
+    margin-top: 1.33333rem;
+}
+.content>.xz3>.ok{
+    font-size: 0.24rem;
+    padding: 0;
+}
+.content>.xz4>.ok{
+    font-size: 0.32rem;
+    padding: 0;
+}
+.content>.more{
+    font-size: 0.346667rem;
+    text-align: center;
+    padding-top: 0.24rem;
+    padding-bottom: 0.4rem;
+}
+.content>.bar{
+    background-color:#cccccc;
+    width: 100%;
+    height: 0.08rem;
+    margin-top: 0.9rem;
+}
+.content>.imgs{
+    text-align: center;
+}
+.content>.imgs>img:nth-child(2){
+    margin-left: 0.4rem;
+}
+.content>.wz>h3{
+    font-size: 0.32rem;
+    font-weight: 500;
+}
+.content>.hh2{
+    color: #000;
+    margin-top: 0.533333rem;
+}
+.imgs img{
+    height: 4.853333rem;
+    width:  3.6rem;
+}
+.xz2 h2 {
+    font-size: 0.346667rem;
+    padding-left: 0.586667rem;
+    color:#7d33d0;
+}
+.taskContent {
+    font-size:0.366667rem;
+    /* float: left; */
+    padding-left: 0.586667rem;
+    margin-top: 0.326667rem;
+}

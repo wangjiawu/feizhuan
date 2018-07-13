@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>彩票详情</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/caipiaoDetail.css">
+    <script src="js/flexible.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <a href="javascript:history.go(-1);" class="back"></a>
+            <span>彩票详情</span>
+        </header>
+        <div class="container">
+            <ul id="container_ul"></ul>
+
+            <a href="kfzx.html">
+                <p class="kf">如有疑问请联系客服></p>
+            </a>
+        </div>
+    </div>
+    <script type="text/template" id="resultTpl">
+    <li>
+        <div class="dd_list">
+            <div class="clearfix list_top">
+                <div class="times fl">{{result.date}}</div>
+                <div class="state fr {{result.color}}">{{result.stats}}</div>
+            </div>
+            {{each result.code as item i}}
+            <ul class="clearfix ball">
+                <li class="redBall">{{item.slice(0,2)}}</li>
+                <li class="redBall">{{item.slice(2,4)}}</li>
+                <li class="redBall">{{item.slice(4,6)}}</li>
+                <li class="redBall">{{item.slice(6,8)}}</li>
+                <li class="redBall">{{item.slice(8,10)}}</li>
+                <li class="blueBall">{{item.slice(10,12)}}</li>
+                <li class="blueBall">{{item.slice(12,14)}}</li>
+            </ul>
+            {{/each}}
+        </div>
+    </li>
+    </script>
+</body>
+<script src="./js/jquery-1.10.2.min.js"></script>
+<script src="./artTemplate/template.js"></script>
+<script>
+    function GetRequest() {
+        var url = decodeURI(location.search); //获取url中"?"符后的字串
+        var theRequest = new Object();
+        if (url.indexOf("?") != -1) {
+            var str = url.substr(1);
+
+            strs = str.split("&");
+
+            for (var i = 0; i < strs.length; i++) {
+                theRequest[strs[i].split("=")[0]] = decodeURIComponent(strs[i].split("=")[1]);
+            }
+        }
+        return theRequest;
+    }
+    var a = GetRequest();
+    var result = {}
+  
+    result['date'] = a.result.slice(0, a.result.indexOf("]") + 1);
+    switch (16) {
+        case a.result.indexOf("支付中"):
+            var length = a.result.slice(19).length / 14
+            // console.log(length)
+            result['stats'] = a.result.slice(16, 19);
+            result['color']="red"
+            result['code'] = [];
+            result['code'].length = length;
+            for (var i = 0; i < length; i++) {
+                result['code'][i] = a.result.slice(19 + (i * 14), 33 + (i * 14))
+            }
+            a.result = result;
+           
+            break;
+        case a.result.indexOf("出票成功"):
+            var length = a.result.slice(20).length / 14
+            // console.log(length)
+            result['stats'] = a.result.slice(16, 20);
+            result['color']="green"
+            result['code'] = [];
+            result['code'].length = length;
+            for (var i = 0; i < length; i++) {
+                result['code'][i] = a.result.slice(20 + (i * 14), 34 + (i * 14))
+            }
+            a.result = result;
+          
+            break;
+        case a.result.indexOf("已支付"):
+            var length = a.result.slice(19).length / 14
+            // console.log(length)
+            result['stats'] = a.result.slice(16, 19);
+            result['color']="green"
+            result['code'] = [];
+            result['code'].length = length;
+            for (var i = 0; i < length; i++) {
+                result['code'][i] = a.result.slice(19 + (i * 14), 33 + (i * 14))
+            }
+            a.result = result;
+           
+            break;
+        case a.result.indexOf("出票中"):
+            var length = a.result.slice(19).length / 14
+            // console.log(length)
+            result['stats'] = a.result.slice(16, 19);
+            result['color']="green"
+            result['code'] = [];
+            result['code'].length = length;
+            for (var i = 0; i < length; i++) {
+                result['code'][i] = a.result.slice(19 + (i * 14), 33 + (i * 14))
+            }
+            a.result = result;
+            break;
+        case a.result.indexOf("中大奖"):
+            var length = a.result.slice(19).length / 14
+            // console.log(length)
+            result['stats'] = a.result.slice(16, 19);
+            result['color']="red"
+            result['code'] = [];
+            result['code'].length = length;
+            for (var i = 0; i < length; i++) {
+                result['code'][i] = a.result.slice(19 + (i * 14), 33 + (i * 14))
+            }
+            a.result = result;
+            break;
+        case a.result.indexOf("出票失败"):
+            var length = a.result.slice(20).length / 14
+            // console.log(length)
+            result['stats'] = a.result.slice(16, 20);
+            result['color']="gray"
+            result['code'] = [];
+            result['code'].length = length;
+            for (var i = 0; i < length; i++) {
+                result['code'][i] = a.result.slice(20 + (i * 14), 34 + (i * 14))
+            }
+            a.result = result;
+            break;
+        case a.result.indexOf("过期关闭"):
+            var length = a.result.slice(20).length / 14
+            // console.log(length)
+            result['stats'] = a.result.slice(16, 20);
+            result['color']="gray"
+            result['code'] = [];
+            result['code'].length = length;
+            for (var i = 0; i < length; i++) {
+                result['code'][i] = a.result.slice(20 + (i * 14), 34 + (i * 14))
+            }
+            a.result = result;
+            break;
+        case a.result.indexOf("领取成功"):
+            var length = a.result.slice(20).length / 14
+            // console.log(length)
+            result['stats'] = a.result.slice(16, 20);
+            result['color']="green"
+            result['code'] = [];
+            result['code'].length = length;
+            for (var i = 0; i < length; i++) {
+                result['code'][i] = a.result.slice(20 + (i * 14), 34 + (i * 14))
+            }
+            a.result = result;
+            break;
+        case a.result.indexOf("领取失败"):
+            var length = a.result.slice(20).length / 14
+            // console.log(length)
+            result['stats'] = a.result.slice(16, 20);
+            result['color']="gray"
+            result['code'] = [];
+            result['code'].length = length;
+            for (var i = 0; i < length; i++) {
+                result['code'][i] = a.result.slice(20 + (i * 14), 34 + (i * 14))
+            }
+            a.result = result;
+            break;
+        case a.result.indexOf("中小奖，领取到账号金额"):
+            var length = a.result.slice(27).length / 14
+            // console.log(length)
+            result['stats'] = a.result.slice(16, 27);
+            result['color']="green"
+            result['code'] = [];
+            result['code'].length = length;
+            for (var i = 0; i < length; i++) {
+                result['code'][i] = a.result.slice(27 + (i * 14), 41 + (i * 14))
+            }
+            a.result = result;
+          
+            break;
+        case a.result.indexOf("中小奖，领取到支付宝"):
+            var length = a.result.slice(26).length / 14
+            // console.log(length)
+            result['stats'] = a.result.slice(16, 26);
+            result['color']="green"
+            result['code'] = [];
+            result['code'].length = length;
+            for (var i = 0; i < length; i++) {
+                result['code'][i] = a.result.slice(26 + (i * 14), 40 + (i * 14))
+            }
+            a.result = result;
+            
+            break;
+
+
+    }
+
+    // console.log(a)
+    var html = template("resultTpl", a)
+    $("#container_ul").html(html)
+</script>
+
+</html>

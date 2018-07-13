@@ -1,0 +1,165 @@
+header{
+	height: 1.12rem;
+	line-height: 1.12rem;
+	font-size: 0.453333rem;
+	text-align: center;
+	color: #fff;
+	left:0px;
+	top:0px;
+	width:100%;
+	background: #4090e9;
+    z-index: 100; 
+    position: fixed;
+  }
+  header a {
+	  float: left;
+	  width: 0.226667rem;
+	  height:0.4rem;
+	  margin-top: 0.4rem;
+	  margin-left:0.366667rem; 
+  }
+ .back {
+	 background: url('../images/back.png') no-repeat;
+	 background-size: 100% 100%;
+	 font-size: 0.373333rem;
+ }
+ .content {
+     margin-top: 1.106667rem;
+ }
+ .list {
+     border: 0.013333rem solid #ccc;
+     padding-bottom: 0.266667rem;
+     padding-top: 0.806667rem;
+     position: relative;
+ }
+ .date p {
+   margin-left: 0.426667rem;
+ }
+ .date img{
+   height: 1.866667rem;
+   width: 1.866667rem;
+   padding-top: 0.426667rem;
+   padding-left: 0.346667rem;
+ }
+ .describe {
+     display: inline-block;
+     word-break: break-all;
+ }
+ .describe p:nth-child(1){
+     font-weight: 700;
+     color: black;
+ }
+ .describe p{
+    margin-top: 0.426667rem;
+    margin-left: 0.426667rem;
+    color: #ccc;
+ }
+.anniu {
+  text-align: center;
+  margin-right:0.346667rem;
+  /* margin-top:1.1rem; */
+  position: absolute;
+  bottom: 10px;
+  right: 0px;
+}
+.anniu button{
+ text-align: center;
+ /* background:  #ff4141; */
+ color: #fff;
+ height:0.88rem;
+ border-radius: 0.066667rem;
+ padding: 0.16rem;
+ width: 1.633333rem;
+}
+.anniu .accomplish {
+    background: #53e672;
+}
+.anniu .unfinished {
+    background: #ccc;
+}
+.anniu .unpublished {
+    background: #82bdff;
+}
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: white
+}
+
+ul {
+    list-style-type: none
+}
+
+a {
+    text-decoration: none;
+    color: #18B4FE;
+}
+
+/*模拟的标题*/
+
+.header {
+    z-index: 9990;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    background-color: white;
+}
+
+.header .btn-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 12px;
+    line-height: 22px;
+}
+
+.header .btn-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 12px;
+}
+
+/*说明*/
+
+.mescroll .notice {
+    font-size: 14px;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+    color: #555;
+}
+
+/*列表*/
+
+.mescroll {
+    position: fixed;
+    top: 0px;
+    bottom: 0;
+    height: auto;
+}
+
+/*展示上拉加载的数据列表*/
+
+.news-list li {
+    padding: 16px;
+    border-bottom: 1px solid #eee;
+}
+
+.news-list .new-content {
+    font-size: 14px;
+    margin-top: 6px;
+    margin-left: 10px;
+    color: #666;
+}

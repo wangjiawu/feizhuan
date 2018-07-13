@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>注册</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/register.css">
+    <script type="text/javascript" src="./js/flexible.js"></script>
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script src="./js/md5.js"></script>
+    <script src="script/api.js"></script>
+    <script src="js/base.js"></script>
+
+</head>
+<body>
+   <header>
+       <a href="./login.html">
+           <img src="./images/back.png" alt="">
+       </a>
+    <span>注册</span>
+    </header>
+    <div class="inputBox">
+            <div class="number">
+                <span>手机号</span>
+                <span class="iphone">+86</span>
+                <input class="phone" type="number">
+            </div>
+            <div class="pwd">
+                <span>密&nbsp;&nbsp;&nbsp;码</span>
+                <input class="password" type="password" placeholder="最少8位字符">
+            </div>
+            <div class="code">
+                <span>验证码</span>
+                <input class="yzm" type="text" value="最少8位字符" onfocus="if (value =='最少8位字符'){value =''}"onblur="if (value ==''){value='最少8位字符'}" id="codes">
+                <!-- <img class="getCode" src="./images/btn_huoqu@2x.png" alt="" > -->
+                <input type="button" value="获取" class="getCode" onclick="sendemail()">
+            </div>
+            <div class="code">
+                <span>邀请码</span>
+                <input class="invitecode" type="text" value="最少8位字符" onfocus="if (value =='最少8位字符'){value =''}"onblur="if (value ==''){value='最少8位字符'}" id="yqcode">
+            </div>
+        </div>
+        <!-- 登录按钮 -->
+        <div class="finish">
+           <button class="submit">
+               <img src="./images/btn_denglu@2x.png" alt="">
+           </button>
+        </div>
+        <div class="quickLogin">
+             <p>快捷登录</p>
+             <a href="#">
+                 <img src="./images/btn_weixin.png" alt="">
+             </a>
+        </div>
+        <script src="script/register.js"></script>
+</body>
+</html>

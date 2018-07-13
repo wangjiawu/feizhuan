@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<head>
+    <meta http-equiv="Content-Type">
+    <meta content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <title>充值</title>
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script type="text/javascript" src="./js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="./js/adaptation-2.0.js"></script>
+    <!-- <script type="text/javascript" src="../js/flexible.js"></script> -->
+    <style lang="">
+    </style>
+</head>
+
+<body class="">
+    <diV class="w">
+        <p class="text30">充值金额</p>
+        <ul class="moneyList clearfix">
+            <li>
+                <span>￥</span>
+                <span>1000</span>
+            </li>
+            <li>
+                <span>
+                    ￥
+                </span>
+                <span>500</span>
+            </li>
+            <li>
+                <span>
+                    ￥
+                </span>
+                <span>200</span>
+            </li>
+            <li>
+                <span>
+                    ￥
+                </span>
+                <span>100</span>
+            </li>
+        </ul>
+        <input type="text" class="text26" placeholder="其他金额" id="text26" />
+        <p class="text30">支付方式</p>
+        <div class="pay text30">
+            <img src="./images/wx.png" alt="">微信支付
+            <input type="radio" class="fr wxpay" name="pay">
+        </div>
+        <div class="pay2 text30">
+            <img src="./images/zfb.png" alt="">支付宝支付
+            <input type="radio" class="fr zfbpay" name="pay" checked>
+        </div>
+        <div class="chongzhi">
+            <span class=" text30 recharge">充值</span>
+        </div>
+        <div class="payres">
+            <span class=" text30">支付失败</span>
+        </div>
+    </diV>
+
+</body>
+<script src="./js/jquery-1.10.2.min.js"></script>
+<script src="./script/api.js"></script>
+<script src="./artTemplate/template.js"></script>
+<script>
+    $(".moneyList li").click(function () {
+        $(".moneyList li").removeClass("active");
+        $(this).addClass("active")
+    });
+    $("#text26").focus(function () {
+        $(".moneyList li").removeClass("active");
+    })
+    $(".recharge").click(function () {
+        var price = 0;
+        if ($(".moneyList li").hasClass("active")) {
+            price = $(".moneyList li.active").find("span").eq(1).html() * 100
+            alipay(price)
+        } else if ($("#text26").val()) {
+            price = $("#text26").val() * 100
+            alipay(price)
+        } else {
+            alert("请选择充值金额")
+        }
+    });
+    function alipay(money) {
+        $.ajax({
+            type: "post",
+            url: API + "/pay/alipayOrderZFB.wckj",
+            dataType: "json",
+            data: {
+                "uid": localStorage.uid,
+                "price": money,
+                "payName": "",
+                "t": "1528940321003",
+                "uuid": "99000708107109",
+                "v": "V1.2.0",
+                "h": "85c57f0862c7a316a09b1f60b50bcf05",
+                "c": "A0000",
+            },
+            success(res) {
+                console.log(res)
+                if (res.resultCode == 10000) {
+                 
+                    var api = "https://openapi.alipay.com/gateway.do?" + res.resultData
+
+                    var a = GetRequest(api);
+                    console.log(a)
+                    console.log(res.resultData)
+                    // window.location.href = api
+                }
+            },
+            error(info) {
+                console.log(info)
+            }
+        })
+    }
+    function GetRequest(api) {
+        var url = decodeURI(api); //获取url中"?"符后的字串
+        var theRequest = new Object();
+        if (url.indexOf("?") != -1) {
+            var str = url.substr(1);
+
+            strs = str.split("&");
+
+            for (var i = 0; i < strs.length; i++) {
+                theRequest[strs[i].split("=")[0]] = decodeURIComponent(strs[i].split("=")[1]);
+            }
+        }
+        return theRequest;
+    }
+</script>
+
+</html>

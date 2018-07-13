@@ -1,0 +1,72 @@
+header{
+	height: 1.12rem;
+	line-height: 1.12rem;
+	font-size: 0.453333rem;
+	text-align: center;
+	color: #fff;
+	width:100%;
+    background: linear-gradient(to right,#8335d4,#1d148b);
+    z-index: 100;
+  }
+  header a {
+	  float: left;
+	  width: 0.226667rem;
+	  height:0.4rem;
+	  margin-top: 0.4rem;
+	  margin-left:0.366667rem; 
+  }
+ .back {
+	 background: url('../images/back.png') no-repeat;
+	 background-size: 100% 100%;
+	 font-size: 0.373333rem;
+ }
+ .succeed {
+     text-align: center;
+     margin-top: 1.533333rem;
+ }
+ .succeed .size {
+     font-size: 0.526667rem;
+     font-weight: 700;
+     color: #333;
+     margin-top: 0.266667rem;
+ }
+ .succeed .mingxi {
+     font-size: 0.36667rem;
+     margin-top: 0.4rem;
+ }
+ .succeed .mingxi a {
+      color: #4090e9;
+ }
+ .list {
+    /* border: 0.013333rem solid #ccc; */
+    padding-bottom: 0.266667rem;
+    
+}
+.date p {
+  margin-top: 0.426667rem;
+  margin-left: 0.426667rem;
+}
+.date img{
+  height: 1.866667rem;
+  width: 1.866667rem;
+  padding-top: 0.926667rem;
+  padding-left: 0.346667rem;
+}
+.describe {
+    display: inline-block;
+    padding-top: 0.426667rem;
+    width: 73%;
+}
+.describe p:nth-child(1){
+    font-weight: 700;
+    color: black;
+}
+.describe p{
+    margin-top: 0.426667rem;
+    margin-left: 0.426667rem;
+    color: #ccc;
+    /* word-break: break-all; */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+ }

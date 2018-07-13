@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="../css/swiper-3.4.2.min.css">
+  <link rel="stylesheet" href="./css/GoodsDetail.css">
+  <script src="./js/jquery-1.10.2.min.js"></script>
+  <script src="../js/swiper-3.4.2.min.js"></script>
+  <script src="./js/flexible.js"></script>
+  <script src="../script/api.js"></script>
+  <script src="../artTemplate/template.js"></script>
+  <script src="./js/GoodsDetail.js"></script>
+</head>
+<style>
+
+.banner{
+  width: 100%;
+}
+.swiper-slide img{
+  display: inline-block;
+  width:100%;
+}
+.banner .ban_title,.jdt {
+    padding: 0.3rem 0.533333rem;
+}
+</style>
+
+<body>
+  <script type="text/template" id="detailTpl">  
+  <header>一元夺宝</header>
+  <div class="banner">
+  
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        {{each resultData.bannerPic as ele j}}
+        <div class="swiper-slide">
+          <img src="{{ele}}" alt="">
+        </div>
+        {{/each}}
+      </div>
+      <!-- 如果需要分页器 -->
+      <div class="swiper-pagination"></div>
+    </div>
+    <div class="ban_title clearfix">
+      <div class="fl ban_msg">{{resultData.goodsName}}</div>
+      <div class="fr ban_price">
+        <p class="sm">价值：</p>
+        <p class="red">{{resultData.showPrice/100}}</p>元</div>
+    </div>
+    <div class="jdt">
+      <div class="time">剩余时间：<span>00</span>:<span>00</span>:<span>00</span>:<span>00</span> </div>
+      <div class="t">
+        <div class="orange"></div>
+      </div>
+      <div class="num clearfix">
+        <div class="fl">总需：
+          <p class="ocolor">{{resultData.goodsCopies}}</p>
+        </div>
+        <div class="fr">剩余：
+          <p class="bcolor">{{resultData.goodsCopies-resultData.buyCounts}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="detail">
+    <div class="det_img prz" style="background:{{resultData.logoPic}}">
+      <div class="pra">
+        <p class="big">恭喜</p>
+        <p class="tel">{{resultData.winMobile}}</p>
+        <p class="jp">{{resultData.goodsName}}</p>
+      </div>
+    </div>
+    <div class="det_msg">
+      <div class="tw">
+        <div class="fl l">图文详情</div>
+        <div class="fr r" id="details">建议在wifi下查看
+          <a href="#">&gt;</a>
+        </div>
+      </div>
+      <div class="jl">
+        <div class="jlw">
+          <div class="jl_title">我的参与记录</div>
+          {{each resultData.myorders as item i}}
+          <div class="jl_det clearfix">
+            <div class="fl l">购买份数：{{item.goodsCopies}}</div>
+            <div class="fr r">{{item.addTime}}</div>
+          </div>
+          {{/each}}
+        </div>
+        <div class="bqjl">
+          <div class="jl_title">本期参与记录</div>
+          {{each resultData.allorders as value index}}
+          <div class="jl_det clearfix">
+            <div class="hao">ID号：{{value.mobile}}</div>
+            <div class="fl l">购买份数：{{value.goodsCopies}}</div>
+            <div class="fr r">{{value.addTime}}</div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+</script>
+</body>
+
+</html>
+<script>
+
+</script>

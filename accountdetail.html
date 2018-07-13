@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>账户明细</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/accountdetail.css">
+    <script type="text/javascript" src="./js/flexible.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <a href="javascript:history.go(-1);" class="back"></a>
+            <span>账户明细</span>
+        </header>
+        <div class="earnings">
+            <p class="daysy">账户余额</p>
+            <p class="money">{{task.money}}</p>
+            <a href="recharge.html">充值
+                <<</a>
+        </div>
+        <div class="detail">
+            <div v-for="(item, index) in task.gain" :key="index" class="download clearfix" v-bind:id="item.id" @click='show(item.id)'>
+                <div class="app fl">
+                    <p class="xiaz">{{item.paramStr1}}</p>
+                    <p class="date">{{item.addTime.time}}</p>
+                </div>
+                <div class="received fr">
+                    <p class="money">￥{{item.money/100}}</p>
+                    <p class="ydz" v-bind:id="index">{{item.type}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/vue.js"></script>
+    <script src="./js/md5.js"></script>
+    <script src="js/base.js"></script>
+    <script src="script/api.js"></script>
+    <script src="js/cookie.js"></script>
+    <script src="script/accountdetail.js"></script>
+</body>
+
+</html>

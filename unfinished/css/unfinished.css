@@ -1,0 +1,74 @@
+header{
+  background: #0f9beb;
+  height: 1.226667rem;
+  line-height: 1.226667rem;
+  text-align: center;
+  font-size: 0.466667rem;
+  color: #fff;
+}
+.blue{
+  background: #82bdff;
+}
+.red{
+  background: #ff4141;
+}
+.gray{
+  background: #ccc;
+}
+.green{
+  background: #53e672;
+}
+.taskList li{
+  border-top: 0.08rem solid #eee;
+  padding-left: 0.346667rem;
+  padding-bottom: 0.4rem;
+}
+.taskList li>p{
+  font-size: 0.266667rem;
+  height: 0.266667rem;
+  line-height: 0.266667rem;
+  color: #333;
+  margin-top: 0.306667rem;
+}
+.taskList li .gList{
+  width: 1.866667rem;
+  height: 1.866667rem;
+  margin-top: 0.426667rem;
+  margin-right: 0.32rem;
+}
+.taskList li .gList img{
+  width: 1.866667rem;
+}
+.taskList li .center{
+  margin-top: 0.4rem;
+}
+.taskList li .center p{
+  font-size: 0.306667rem;
+  height: 0.306667rem;
+  line-height: 0.306667rem;
+  color: #999;
+  margin-bottom: 0.266667rem;
+}
+.taskList li .center p.gName{
+  color: #000;
+  font-size: 0.266667rem;
+  height: 0.266667rem;
+  line-height: 0.266667rem;
+}
+.taskList li .center .taskContent{
+  width: 4.2rem;
+  overflow:hidden;
+  white-space:nowrap; 
+  text-overflow:ellipsis; 
+}
+.taskList li .r{
+  margin-top: 0.8rem;
+  margin-right: 0.346667rem;
+  width: 1.866667rem;
+  height: 0.88rem;
+  line-height: 0.88rem;
+  text-align: center;
+  font-size: 0.32rem;
+  color: #fff;
+  border-radius: 0.106667rem;
+}

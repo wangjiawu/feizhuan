@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/unfinished.css">
+  <script src="./js/jquery-1.10.2.min.js"></script>
+  <script src="./js/flexible.js"></script>
+  <script src="../artTemplate/template.js"></script>
+  <script src="../script/api.js"></script>
+  <script src="./js/unfinished.js"></script>
+</head>
+<body>
+  <header>未完成任务列表</header>
+  <div class="taskList">
+    <ul>
+    </ul>
+  </div>
+  <script type="text/template" id="UnfinishedTaskTpl">
+  {{each resultData as item i}}
+  <li id="{{item.id}}">
+    <p>{{item.addTime}}</p>
+    <div class="list_cont clearfix">
+      <div class="fl gList">
+        <img src="{{item.icon}}" alt="">
+      </div>
+      <div class="fl center">
+        <p class="gName">{{item.name}}</p>
+        <p class="taskContent">{{item.content}}</p>
+        <p>单价：{{item.money/100}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数量：{{item.number}}</p>
+        <!-- <p>任务类型：下载类</p> -->
+      </div>
+      <div class="fr r " style="background:{{item.label[0].labelColor}}">{{item.label[0].labelName}}</div>
+    </div>
+  </li>
+  {{/each}}
+  </script>
+</body>
+</html>

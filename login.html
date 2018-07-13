@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/login.css">
+
+</head>
+<body>
+    <div id="app">
+        <div class="icon">
+            <img src="./images/touxiang.png" alt="">
+        </div>
+        <div class="inputBox">
+            <div class="number">
+                <span>手机号</span>
+                <span class="iphone">+86</span>
+                <input v-model="userinfo.mobile" type="text" name="phone" id="phone">
+            </div>
+            <div class="pwd">
+                <span>密码</span>
+                <input v-model="userinfo.password" type="password" placeholder="最少8位字符" name="pwd" id="pwd">
+            </div>
+            <div class="register">
+                <a href="register.html" class="fl">注册</a>
+                <a href="retrievepwd.html" class="forget fl">忘记密码?</a>
+            </div>
+        </div>
+        <!-- 登录按钮 -->
+        <div class="login" @click="handleClick">
+            <img id="login" src="./images/btn_denglu@2x.png" alt="">
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/flexible.js"></script>
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/vue.js"></script>
+    <script src="./js/md5.js"></script>
+    <script src="js/base.js"></script>
+    <script src="script/api.js"></script>
+    <script src="js/cookie.js"></script>
+    <script src="script/login.js"></script>
+</body>
+</html>

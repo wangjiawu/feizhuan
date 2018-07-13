@@ -1,0 +1,113 @@
+header{
+	height: 1.12rem;
+	line-height: 1.12rem;
+	font-size: 0.453333rem;
+	text-align: center;
+    color: #fff;
+    background: linear-gradient(to right,#8335d4,#1d148b);
+	left:0px;
+	top:0px;
+	width:100%;
+    z-index: 100; 
+  }
+  header a {
+	  float: left;
+	  width: 0.226667rem;
+	  height:0.4rem;
+	  margin-top: 0.4rem;
+	  margin-left:0.366667rem; 
+  }
+ .back {
+	 background: url('../images/back.png') no-repeat;
+	 background-size: 100% 100%;
+	 font-size: 0.373333rem;
+ }
+  /*弹性盒*/
+  .dib{
+    display: inline-block;
+  }
+  .flexbox{
+    display: flex;
+  }
+  .fb1{
+    flex-grow: 1;
+    width: 1px;
+    font-weight: 700;
+  }	
+  .fb_acenter{
+    align-content: center;
+    align-items: center;
+  }
+  .light-gray {
+      color: #999;
+  }
+  .award {
+      padding:0.2rem;
+      margin-bottom: 1.7333333rem;
+  }
+  .award-title-box{
+      height: 0.6rem;
+      line-height: 0.6rem;
+      margin-top: 0.3rem;
+  }
+  .award-title-box a{
+      line-height: 0.5rem;
+  }
+  .award-content-box {
+    margin-top: 0.4rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid #999;
+  }
+  .award-content-box p{
+      height: 0.4rem;
+      line-height: 0.4rem;
+  }
+  .award-content-img{
+      width: 0.8rem;
+      height:0.8rem;
+      border-radius: 0.1rem;
+      margin-right: 0.5rem;
+    background:url('../images/icon_shuangseqiu@2x.png') no-repeat;
+    background-size: 100% 100%;
+      
+  }
+  .award-content-img1{
+      width: 0.8rem;
+      height:0.8rem;
+      border-radius: 0.1rem;
+      margin-right: 0.5rem;
+      background:url('../images/icon_daletou@2x.png') no-repeat;
+      background-size: 100% 100%;    
+  }
+  .ssq span {
+    margin-right: 0.3rem;
+    margin-top:0.1rem;
+    display: inline-block;
+      width:.8rem;
+      height: .8rem;
+      line-height: .8rem;
+      text-align: center;color: #fff;
+    border-radius: 100%;	
+  }
+  .ssq span:nth-child(-n+6){
+    background: #c33;
+  }
+  .ssq span:last-child{
+    background: blue;
+  }
+  .dlt span {
+    margin-right: 0.3rem;
+    margin-top:0.1rem;
+    display: inline-block;
+      width:.8rem;
+      height: .8rem;
+      line-height: .8rem;
+      text-align: center;color: #fff;
+    border-radius: 100%;	
+  }
+  .dlt span:nth-child(-n+5){
+    background: #c33;
+  }
+  .dlt span:nth-child(n+6){
+    background: blue;
+  }

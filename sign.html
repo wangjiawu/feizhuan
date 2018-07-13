@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/sign.css">
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="./js/flexible.js"></script>
+    <title>签到</title>
+</head>
+
+<body>
+    <!-- 签到部分 -->
+    <header>
+        <a href="javascript:history.go(-1);" class="back"></a>
+        <span>签到</span>
+    </header>
+    <a href="#" class="bg-bq active"></a>
+    <div class="yi">
+        <p class="continuous">
+            <span>已连续签到</span>
+            <span style="display:inline-block;">天</span>
+        </p>
+        <p>今日签到可获得
+            <span class="pMoney"></span>元</p>
+        <p>连续签到有更多惊喜哦!</p>
+    </div>
+
+
+    <div class="rectangle">
+        <ul>
+            <li>
+                <h3></h3>
+                <span></span>
+                <h4></h4>
+            </li>
+            <li>
+                <h3 class="today_price"></h3>
+                <span class="today"></span>
+                <h4>今日</h4>
+            </li>
+            <li>
+                <h3></h3>
+                <span></span>
+                <h4>明日</h4>
+            </li>
+            <li>
+                <h3></h3>
+                <span></span>
+                <h4></h4>
+            </li>
+            <li>
+                <h3></h3>
+                <span></span>
+                <h4></h4>
+            </li>
+            <li>
+                <h3></h3>
+                <span></span>
+                <h4></h4>
+            </li>
+            <li>
+                <h3></h3>
+                <span></span>
+                <h4></h4>
+            </li>
+        </ul>
+        <img src="images/圆角矩形1@2x.png" alt="">
+    </div>
+    <!-- 签到明细 -->
+    <div class="detail">
+        <h2>签到明细</h2>
+        <ul>
+            <!-- <li>
+                <p>2018-3-29</p>
+                <span>已签到</span>
+                <h4>0.05</h4>
+            </li> -->
+
+
+        </ul>
+    </div>
+    <script src="./artTemplate/template.js"></script>
+    <script src="./script/api.js"></script>
+    <script type="text/template" id="listTpl">
+        {{each resultData as item i}}
+        <li>
+            <p>{{item.addTime}}</p>
+            <span>{{item.state==0?"未签到":"已签到"}}</span>
+            <h4>{{item.money}}</h4>
+        </li>
+        {{/each}}
+    </script>
+    <script>
+        //今日
+        var getDate = new Date();
+
+        var month = getDate.getMonth() + 1;//月份
+
+        var day = getDate.getDate();//日期
+
+        var minth = 24 * 60 * 60 * 1000;//一天多少毫秒
+
+        $(".rectangle li").eq(0).find("h4").html(new Date((+new Date()) - minth).getMonth() + 1 + "." + new Date((+new Date()) - minth).getDate());//昨天日期
+        $(".rectangle li").eq(3).find("h4").html(new Date(+getDate + minth * 2).getMonth() + 1 + "." + new Date(+getDate + minth * 2).getDate());//后天日期
+        $(".rectangle li").eq(4).find("h4").html(new Date(+getDate + minth * 3).getMonth() + 1 + "." + new Date(+getDate + minth * 3).getDate());//后天日期
+        $(".rectangle li").eq(5).find("h4").html(new Date(+getDate + minth * 4).getMonth() + 1 + "." + new Date(+getDate + minth * 4).getDate());//后天日期
+        $(".rectangle li").eq(6).find("h4").html(new Date(+getDate + minth * 5).getMonth() + 1 + "." + new Date(+getDate + minth * 5).getDate());//后天日期
+
+
+
+        getSignList()
+
+        function getSignList() {//签到列表 先判断今天是否可签到
+            $.ajax({
+                type: "post",
+                url: API + "/user/getSignList.wckj",
+                data: {
+                    "uid": localStorage.uid,
+                    "t": "1528940321003",
+                    "uuid": "99000708107109",
+                    "v": "V1.2.0",
+                    "h": "85c57f0862c7a316a09b1f60b50bcf05",
+                    "c": "A0000"
+                },
+                dataType: "json",
+                success(res) {
+                    console.log(res)
+                    if (res.resultCode == 10000) {
+
+
+                        var time = 1;
+                        // res.resultData[1].isSign = 3;
+                        res.resultData.forEach(function (item, i) {
+
+                            $(".rectangle li").eq(i).find("h3").html("+" + item.price / 100)
+
+                            if (item.isSign == 3) {//可签到今天
+
+                                $(".bg-bq").show();
+
+                                $(".yi").hide();
+
+                                $(".bg-bq").on("click",stat )
+                            }
+                            else if (item.isSign == 1) {
+
+                                $(".bg-bq").hide();
+
+                                $(".pMoney").html(item.price / 100);
+
+                                if (res.resultData[i].isSign == res.resultData[i + 1].isSign == 1) {
+                                    time++;
+
+                                }
+                                $(".continuous span").eq(1).html("" + time + "天")//连续签到几天
+
+                                $(".yi").show();
+
+                            }
+                        })
+
+
+                    } else {
+                        console.log(res.resultMsg)
+                    }
+                },
+                error(info) {
+                    console.log(info)
+                }
+            })
+        }
+
+
+
+        function stat() {//点击签到
+            $.ajax({
+                type: "POST",
+                url: API + "/stat.wckj",
+                data: {
+                    "statype": 1,
+                    "uid": localStorage.uid,
+                    "taskid": 1,
+                    "bannerid": 1,
+                    "t": "1528940321003",
+                    "uuid": "99000708107109",
+                    "v": "V1.2.0",
+                    "h": "85c57f0862c7a316a09b1f60b50bcf05",
+                    "c": "A0000"
+                },
+                dataType: "json",
+                success(res) {
+                    console.log(res)
+
+                    if (res.resultCode == 10000) {
+                        $(".bg-bq").hide();
+                        $(".yi").show();
+                      
+                        getMySignList();
+                        getSignList()
+                    }
+                },
+                error(info) {
+                    console.log(info)
+                }
+            })
+        }
+        getMySignList()
+        function getMySignList() {//签到明细
+            $.ajax({
+                type: "post",
+                url: API + "/user/getMySignList.wckj",
+                dataType: "json",
+                data: {
+                    "uid": localStorage.uid
+                },
+                success(res) {
+                    console.log(res)
+                    if (res.resultCode == 10000) {
+                        res.resultData.forEach(function (item, i) {
+                            item.money = item.money / 100;
+                        });
+                        var html = template("listTpl", res);
+                        $(".detail ul").html(html);
+                       
+                    } else {
+                        console.log(res.resultMsg)
+                    }
+                },
+                error(info) {
+                    console.log(info)
+                }
+            })
+        }
+
+    </script>
+</body>
+
+</html>

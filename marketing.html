@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>好友邀请</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/marketing.css">
+    <script src="./js/flexible.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <a href="javascript:history.go(-1);" class="back"></a>
+            <span>邀请好友</span>
+        </header>
+        <div class="pra btn">
+            <a href="#" v-bind:id="friends.invitecode"><img src="./images/btn_fenxiang@2x.png" alt=""></a>
+        </div>
+        <div class="pra msg">
+            <ul>
+                <li class="one"><span class="friend">一级好友</span><span class="num">{{friends.level1FriendsSize}}人</span><span>奖励:￥{{friends.level1FriendsMoney}}</span></li>
+                <li> <span class="friend">二级好友</span><span class="num">{{friends.level2FriendsSize}}人</span><span>奖励:￥{{friends.level2FriendsMoney}}</span></li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="./js/jquery-1.10.2.min.js"></script>
+    <script src="js/vue.js"></script>
+    <script src="./js/md5.js"></script>
+    <script src="script/api.js"></script>
+    <script src="js/base.js"></script>
+    <script src="js/cookie.js"></script>
+    <script src="script/marketing.js"></script>
+</body>
+</html>

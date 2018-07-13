@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>飞赚</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+</head>
+<body>
+    <div id="app">
+        <header>飞赚</header>
+        <nav>
+            <div class="banner">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div v-for="(i, index) in banner" :key="index" class="swiper-slide">
+                            <a href="#"><img :src="i.banner" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="message" style="display: flex">
+                <div>
+                    <img src="./images/icon_gonggao@2x.png" alt="" class="laba">
+                    <span class="xiaoxi">消息通知</span>
+                </div>
+                <div class="swiper-messageSys" style="flex:1; overflow: hidden;">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" v-for="(i, index) in messageSys" :key="index">
+                            <p class="msg fr">{{i.msg}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 限量任务开始 -->
+            <div class="xianliang">
+                <div class="clearfix">
+                    <div class="xltitle fl">限量任务</div>
+                    <div class="xltime fr">还有06:25:46开始</div>
+                </div>
+                <div class="xlcenter clearfix">
+                    <div class="xianlaing_box" v-for="(i,index) in timeTask.task" :key="index" >
+                        <div  class="" @click='go(i.id)'><img :src="i.icon" alt="">
+                            <p>$<span>{{i.money/100}}</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="xlbottom"><a href="#">查看更多</a></div>
+            </div>
+            <!-- 限量任务结束 -->
+
+            <!-- 返利三张图开始 -->
+            <div class="fanli clearfix">
+                <div class="fanli1 fl">
+                    <a href="marketing.html"><img src="./images/邀请好友@2x.png" alt=""></a>
+                </div>
+                <div class="fanli2 fr">
+                    <a href="./treasure.html"><img src="./images/一元夺宝@2x.png" alt=""></a>
+                    <a href="./sign.html"><img src="./images/签到@2x.png" alt=""></a>
+                </div>
+            </div>
+            <!-- 返利三张图开始 -->
+
+            <!-- 热门任务开始 -->
+            <div v-for="(task, index) in tasks" :key="index" class="remen">
+                <div class="clearfix biaoti">
+                    <div class="title fl">{{task.typeTitle}}</div>
+                    <a class="fr more">更多</a>
+                </div>
+                <div class="list">
+                    <ul>
+                        <li v-for="(t, index) in task.task" :key="index" class="clearfix">
+                            <div @click='go(t.id)'>
+                                <img :src="t.icon" alt="" class="fl">
+                            
+                            <div class="download fl">
+                                <p class="gameName">{{t.name}}</p>
+                                <p class="dlNumber clearfix">{{t.content}}</p>
+                                <p class="dlTime">{{t.addTime}}</p>
+                            </div>
+                            <div class="price fr">￥{{t.money}}</div>
+                        </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 好友邀请 -->
+            <div class="rw">
+                <div class="rwTit" v-for="(type, index) in typetask" :key="index">
+
+                    <a href="#" ><img :src="type.img" class="friend" alt=""></a>
+                </div>
+                <div class="list">
+                    <ul>
+                        <li v-for="(task, index) in taskList" :key="index" class="clearfix" @click="taskDetail(task.id)">
+                            <!-- <a href="taskdetail.html"> -->
+                            <img :src="task.icon" alt="" class="fl">
+                            <div class="download fl">
+                                <p class="gameName">{{task.name}}</p>
+                                <p class="dlNumber clearfix">任务内容：{{task.content}}</p>
+                                <p class="dlTime">{{task.addTime}}</p>
+                            </div>
+                            <div class="price fr">￥{{task.money}}</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- 底部开始 -->
+        <footer>
+            <div class="footer_box"><a href="index.html" class="task active">任务</a></div>
+            <div class="footer_box"><a href="issue.html" class="issue">发布</a></div>
+            <div class="footer_box"><a href="caipiao.html" class="caipiao">彩票</a></div>
+            <div class="footer_box"><a href="my.html" class="my">我的</a></div>
+        </footer>
+        <!-- 底部结束 -->
+    </div>
+    <script type="text/javascript" src="./js/flexible.js"></script>
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="js/swiper.min.js"></script>
+    <script type="text/javascript" src="./js/vue.js"></script>
+    <script type="text/javascript" src="./js/md5.js"></script>
+    <script type="text/javascript" src="script/api.js"></script>
+    <script type="text/javascript" src="js/base.js"></script>
+    <script type="text/javascript" src="script/swiper.js"></script>
+    <script type="text/javascript" src="js/cookie.js"></script>
+    <script type="text/javascript" src="script/index.js"></script>
+</body>
+
+</html>
+<script>
+    
+     var swiper = new Swiper('.swiper-container',{
+        autoplay: 1000,//可选选项，自动滑动
+        loop : true,
+     });
+     setInterval("swiper.slidePrev()", 2000);
+</script>
+<style>
+    a{
+        display: block;
+    }
+</style>

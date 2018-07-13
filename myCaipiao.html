@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>我的彩票</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/myCaipiao.css">
+  <script src="js/flexible.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <header>
+      <a href="javascript:history.go(-1);" class="back"></a>
+      <span>我的彩票</span>
+    </header>
+    <div class="tabContain">
+      <!-- tab栏 -->
+      <div class="tab clearfix">
+        <div class="btn_item fl active" id="sspBar">
+          <img src="./ssq.png" alt="">
+          <span>双色球</span>
+        </div>
+        <div class="btn_item fl" id="letouBar">
+          <img src="./dlt.png" alt="">
+          <span>大乐透</span>
+        </div>
+      </div>
+      <!-- 对应显示内容 -->
+      <ul class="tab_list">
+        <li class="list_item on">
+          <ul id="sspList">
+            <!-- <li class="dd_list">
+              <div class="clearfix list_top">
+                <div class="times fl">第2018045期[04-22]</div>
+                <div class="state fr green">已支付</div>
+              </div>
+              <ul class="clearfix ball">
+                <li class="redBall">05</li>
+                <li class="redBall">16</li>
+                <li class="redBall">23</li>
+                <li class="redBall">25</li>
+                <li class="redBall">16</li>
+                <li class="redBall">47</li>
+                <li class="blueBall">12</li>
+              </ul>
+            </li> -->
+
+          </ul>
+        </li>
+        <li class="list_item">
+          <ul id="letou">
+            <!-- <li class="dd_list">
+              <div class="clearfix list_top">
+                <div class="times fl">第2016043期[04-18]</div>
+                <div class="state fr red">出票中</div>
+              </div>
+              <ul class="clearfix ball">
+                <li class="redBall">07</li>
+                <li class="redBall">12</li>
+                <li class="redBall">13</li>
+                <li class="redBall">07</li>
+                <li class="redBall">04</li>
+                <li class="redBall">08</li>
+                <li class="blueBall">21</li>
+              </ul>
+            </li> -->
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script type="text/template" id="ssqTpl">
+{{each resultData as item i}}
+    <li class="dd_list" data-id={{item.result}} data-order={{item.tradeNo}} data-money={{item.monery}} data-moneryh={{item.moneryh}} data-outTradeNo={{item.outTradeNo}}>
+        <div class="clearfix list_top">
+           <div class="times fl">{{item.issue}}</div>
+           <div class="state fr state{{i}}"></div>
+        </div>
+        {{each item.code as key e}}
+        <ul class="clearfix ball">
+          <li class="redBall">{{key.code.slice(0,2)}}</li>
+          <li class="redBall">{{key.code.slice(3,5)}}</li>
+          <li class="redBall">{{key.code.slice(6,8)}}</li>
+          <li class="redBall">{{key.code.slice(9,11)}}</li>
+          <li class="redBall">{{key.code.slice(12,14)}}</li>
+          <li class="redBall">{{key.code.slice(15,17)}}</li>
+          <li class="blueBall">{{key.code.slice(18,20)}}</li>
+        </ul>
+        {{/each}}
+    </li>
+{{/each}}
+</script>
+
+  <script type="text/template" id="letouTpl">
+  {{each resultData as value index}}
+   <li class="dd_list" data-id={{value.result}} data-order={{value.tradeNo}} data-money={{value.monery}} data-moneryh={{value.moneryh}} data-out={{value.outTradeNo}}>
+      <div class="clearfix list_top">
+        <div class="times fl">{{value.issue}}</div>
+        <div class="state fr state{{index}}"></div>
+      </div>
+      {{each value.code as key e}}
+      <ul class="clearfix ball">
+        <li class="redBall">{{key.code.slice(0,2)}}</li>
+        <li class="redBall">{{key.code.slice(3,5)}}</li>
+        <li class="redBall">{{key.code.slice(6,8)}}</li>
+        <li class="redBall">{{key.code.slice(9,11)}}</li>
+        <li class="redBall">{{key.code.slice(12,14)}}</li>
+        <li class="blueBall">{{key.code.slice(15,17)}}</li>
+        <li class="blueBall">{{key.code.slice(18,20)}}</li>
+      </ul>
+      {{/each}}
+  </li>
+  {{/each}}
+  </script>
+
+</body>
+
+<script src="./js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="./js/vue.js"></script>
+<script type="text/javascript" src="./script/api.js"></script>
+<script src="./artTemplate/template.js"></script>
+<script src="./script/myCaipiao.js"></script>
+
+</html>
